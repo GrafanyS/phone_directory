@@ -1,0 +1,26 @@
+[
+    {
+        "hostname": "sw1",
+        "vendor": "Cisco",
+        "model": "3750",
+        "location": "London, Best str"
+    },
+    {
+        "hostname": "sw2",
+        "vendor": "Cisco",
+        "model": "3850",
+        "location": "Liverpool, Better str"
+    },
+    {
+        "hostname": "sw3",
+        "vendor": "Cisco",
+        "model": "3650",
+        "location": "Liverpool, Better str"
+    },
+    {
+        "hostname": "sw4",
+        "vendor": "Cisco",
+        "model": "3650",
+        "location": "London, Best str"
+    }
+]
