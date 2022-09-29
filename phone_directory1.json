@@ -1,0 +1,82 @@
+[
+    {
+        "null": [
+            "hostname",
+            "vendor",
+            "model",
+            "location"
+        ]
+    },
+    {
+        "null": [
+            "sw1",
+            "Cisco",
+            "3750",
+            "London, Best str"
+        ]
+    },
+    {
+        "null": [
+            "sw2",
+            "Cisco",
+            "3850",
+            "Liverpool, Better str"
+        ]
+    },
+    {
+        "null": [
+            "sw3",
+            "Cisco",
+            "3650",
+            "Liverpool, Better str"
+        ]
+    },
+    {
+        "null": [
+            "sw4",
+            "Cisco",
+            "3650",
+            "London, Best str"
+        ]
+    },
+    {
+        "null": [
+            "hostname",
+            "vendor",
+            "model",
+            "location"
+        ]
+    },
+    {
+        "null": [
+            "sw1",
+            "Cisco",
+            "3750",
+            "London, Best str"
+        ]
+    },
+    {
+        "null": [
+            "sw2",
+            "Cisco",
+            "3850",
+            "Liverpool, Better str"
+        ]
+    },
+    {
+        "null": [
+            "sw3",
+            "Cisco",
+            "3650",
+            "Liverpool, Better str"
+        ]
+    },
+    {
+        "null": [
+            "sw4",
+            "Cisco",
+            "3650",
+            "London, Best str"
+        ]
+    }
+]
