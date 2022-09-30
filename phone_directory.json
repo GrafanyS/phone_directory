@@ -22,5 +22,17 @@
         "vendor": "Cisco",
         "model": "3650",
         "location": "London, Best str"
+    },
+    {
+        "surname": "РџР СЂРѕ",
+        "name": "С‹РІР°С‹РІР°",
+        "tel": "6565",
+        "description": "С‹РІР°С‹"
+    },
+    {
+        "surname": "FDFsdf",
+        "name": "ПОРП",
+        "tel": "546564",
+        "description": "ПОЛл"
     }
 ]
