@@ -1,31 +1,21 @@
 import json
 from colorama import Fore, Back, Style
 
-print(Fore.BLACK + "" + Back.RED +
-      "Сделай что надо" + Style.RESET_ALL)  # для EXEPT
-print(Fore.BLACK + "" + Back.GREEN +
-      "Сделай что надо" + Style.RESET_ALL)  # для вводв
-print(Fore.BLACK + "" + Back.BLUE + "Сделай что надо" +
-      Style.RESET_ALL)  # для такого пункта нет
-
 
 # print(Back.BLUE + Fore.BLUE + 'and with a blue background' +Style.RESET_ALL)
 def check_main_menu():
     while True:
         try:
-            num = int(input(Fore.BLACK + "" + Back.BLUE +
-                      'Введите номер пункта, который хотите выполнить: ' + Style.RESET_ALL))
+            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: '
+                            + Style.RESET_ALL))
             if 0 <= num <= 6:
                 break
             else:
-                print(Fore.BLACK + "" + Back.GREEN +
-                      'Такого пункта меню нет!' + Style.RESET_ALL)
-                print(Fore.LIGHTWHITE_EX +
-                      'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
                 continue
         except ValueError:
-            print(Fore.BLACK + "" + Back.RED +
-                  'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
+            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
 
     return num
 
@@ -41,9 +31,8 @@ def check_search_menu():
             if 0 <= num <= 1:
                 break
             else:
-                print('Такого пункта меню нет!')
-                print(Fore.BLACK + "" + Back.BLUE +
-                      'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
                 continue
         except ValueError:
             print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
@@ -61,8 +50,7 @@ def check_directory():
             phone_dir = json.load(f)
             return True
     except ValueError:
-        print(Fore.BLACK + "" + Back.RED +
-              'Ваш справочник пока еще пустой!' + Style.RESET_ALL)
+        print(Fore.BLACK + "" + Back.RED + 'Ваш справочник пока еще пустой!' + Style.RESET_ALL)
         return False
 
 
@@ -74,13 +62,11 @@ def check_menu_act_contact():
             if 0 <= num <= 4:
                 break
             else:
-                print('Такого пункта меню нет!')
-                print(Fore.BLACK + "" + Back.BLUE +
-                      'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
                 continue
         except ValueError:
-            print(Fore.BLACK + "" + Back.RED +
-                  'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
+            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
 
     return num
 
@@ -93,26 +79,11 @@ def check_menu_ch_con():
             if 1 <= num <= 4:
                 break
             else:
-                print(Fore.BLACK + "" + Back.BLUE +
-                      'Такого пункта меню нет!' + Style.RESET_ALL)
-                print(Fore.LIGHTWHITE_EX +
-                      'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
                 continue
         except ValueError:
-            print(Fore.BLACK + "" + Back.RED +
-                  'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
+            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
 
         return
 
-
-print(Fore.BLACK + "" + Back.RED +
-      "Сделай что надо" + Style.RESET_ALL)  # для EXEPT
-print(Fore.BLACK + "" + Back.GREEN +
-      "Сделай что надо" + Style.RESET_ALL)  # для вводв
-print(Fore.BLACK + "" + Back.BLUE + "Сделай что надо" +
-      Style.RESET_ALL)  # для такого пункта нет
-
-print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет!' + Style.RESET_ALL)
-print(Fore.BLACK + "" + Back.RED + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
-print(Fore.BLACK + "" + Back.RED +
-      'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
