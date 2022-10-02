@@ -14,3 +14,17 @@
 # submit = Button(top, text="Submit", fg="blue").place(x=120, y=150)
 
 # top.mainloop()
+from menu import *
+
+"""
+Внимание! Некоторые функции используют операторы сопоставления (match/case)
+Python версии 3.9 и ниже не поддерживают операторы сопоставления
+"""
+
+
+def main():
+    menu()
+
+
+if __name__ == '__main__':
+    main()
