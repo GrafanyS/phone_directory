@@ -1,9 +1,104 @@
-import jmespath
-from unicodedata import name
+import json
+from colorama import Fore, Back, Style
 
-fail = r"phone_directory.csv"
-with open(fail, 'r', encoding = 'utf-8') as f:
-    data = []
-    ex = jmespath.compile('f[0].age')
-    res = ex.search('phone_directory')
-print(res)
+print(Fore.LIGHTWHITE_EX + 'some red text')
+print(Back.LIGHTYELLOW_EX + 'and with a green background')
+print(Style.DIM + 'and in dim text')
+print(Style.RESET_ALL)
+print('back to normal now')
+
+
+# print(Back.BLUE + Fore.BLUE + 'and with a blue background' +Style.RESET_ALL)
+def check_main_menu():
+    while True:
+        try:
+            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: ' /
+                            + Style.RESET_ALL))
+            if 0 <= num <= 6:
+                break
+            else:
+                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
+                continue
+        except ValueError:
+            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
+
+    return num
+
+
+#
+
+def check_search_menu():
+    while True:
+        try:
+            num = int(
+                input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, по которому вы хотите найти контакт: ' /
+                      + Style.RESET_ALL))
+            if 0 <= num <= 1:
+                break
+            else:
+                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
+                continue
+        except ValueError:
+            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
+
+    return num
+
+
+def check_directory():
+    '''
+    Проверка, пустой ли справочник.
+    :return:
+    '''
+    try:
+        with open('data_base.json', 'r') as f:
+            phone_dir = json.load(f)
+            return True
+    except ValueError
+        print(Fore.BLACK + "" + Back.RED + 'Ваш справочник пока еще пустой!' + Style.RESET_ALL)
+        return False
+
+
+def check_menu_act_contact():
+    while True:
+        try:
+            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: ' /
+                            + Style.RESET_ALL))
+            if 0 <= num <= 4:
+                break
+            else:
+                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
+                continue
+        except ValueError:
+            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
+
+    return num
+
+
+def check_menu_ch_con():
+    while True:
+        try:
+            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: ' /
+                            + Style.RESET_ALL))
+            if 1 <= num <= 4:
+                break
+            else:
+                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
+                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
+                continue
+        except ValueError:
+            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
+
+        return
+
+# import jmespath
+# from unicodedata import name
+#
+# fail = r"phone_directory.csv"
+# with open(fail, 'r', encoding = 'utf-8') as f:
+#     data = []
+#     ex = jmespath.compile('f[0].age')
+#     res = ex.search('phone_directory')
+# print(res)
