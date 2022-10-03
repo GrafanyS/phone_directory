@@ -23,7 +23,7 @@ Python версии 3.9 и ниже не поддерживают операто
 
 
 def main():
-    menu()
+    main_menu()
 
 
 if __name__ == '__main__':
