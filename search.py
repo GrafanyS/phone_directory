@@ -2,35 +2,38 @@ import json
 from colorama import Fore, Back, Style
 
 
-def search(num, i=None, surname_key=None):
-    with open('phone_directory.json', 'r', incoding="UTF-8") as f:
-        phone_dir: object = json.load(f)
 
-    search_res = []
-    if num == 1:
-        surname_key = input(Fore.GREEN + "" 'Введите фамилия контакта: ' + Style.RESET_ALL)
-        for i in phone_dir:
-            if i['surname'] == surname_key:
-                search_res.append(i)
-        return search_res
+def gen_person():
+    surname = input('Введите фамилию:')
+    name = input('Введите имя:')
+    tel = input('Введите номер телефона:')
+    description = input('Дополнительная информация:')
 
-    if num == 2:
-        surname_key = input(Fore.GREEN + 'Введите фамилию контакта: ' + Style.RESET_ALL)
-        for i in phone_dir:
-            if i['surname'] == surname_key:
-                search_res.append(i)
-        return search_res
+    person = {
+        'surname': surname,
+        'name': name,
+        'tel': tel,
+        'description': description
+    }
+    return person
 
-    if num == 3:
-        surname_key = input(Fore.GREEN + 'Введите фамилию контакта: ' + Style.RESET_ALL)
-        for i in phone_dir:
-            if i['surname'] == surname_key:
-                search_res.append(i)
-        return search_res
 
-    if num == 4:
-        surname_key = input(Fore.GREEN + 'Введите фамилию контакта: '+ Style.RESET_ALL)
-        for i in phone_dir:
-            if i['surname'] == surname_key:
-                search_res.append(i)
-        return search_res
+def write_json(person_dict):
+    try:
+        data = json.load(open('phone_directory.json'))
+    except:
+        data = []
+
+    data.append(person_dict)
+
+    with open('phone_directory.json', 'w', encoding='utf-8') as file:
+        json.dump(data, file, indent=4, ensure_ascii=False)
+
+
+def main():
+    for i in range(1):
+        write_json(gen_person())
+
+
+if name == 'main':
+    main()

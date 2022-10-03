@@ -2,26 +2,6 @@ import json
 from colorama import Fore, Back, Style
 
 
-# print(Back.BLUE + Fore.BLUE + 'and with a blue background' +Style.RESET_ALL)
-def check_main_menu():
-    while True:
-        try:
-            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: '
-                            + Style.RESET_ALL))
-            if 0 <= num <= 6:
-                break
-            else:
-                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
-                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
-                continue
-        except ValueError:
-            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
-
-    return num
-
-
-#
-
 def check_search_menu():
     while True:
         try:
@@ -59,6 +39,7 @@ def check_menu_act_contact():
         try:
             num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: '
                             + Style.RESET_ALL))
+
             if 0 <= num <= 4:
                 break
             else:
