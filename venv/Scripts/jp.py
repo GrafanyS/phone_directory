@@ -1,4 +1,4 @@
-#!D:\Git\phone_directory\venv\Scripts\python.exe
+#!C:\Users\Артур\Калькулятор 2\phone_directory\venv\Scripts\python.exe
 
 import sys
 import json
