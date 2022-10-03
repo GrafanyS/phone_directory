@@ -12,19 +12,20 @@
 # e3 = Entry(top).place(x = 120, y = 90)
 # e4 = Entry(top).place(x = 120, y = 120)
 # submit = Button(top, text="Submit", fg="blue").place(x=120, y=150)
-
-# top.mainloop()
-from menu import *
-
-"""
-Внимание! Некоторые функции используют операторы сопоставления (match/case)
-Python версии 3.9 и ниже не поддерживают операторы сопоставления
-"""
+from colorama import Fore, Back, Style
+import check
 
 
-def main():
-    menu()
+def main_menu():
+    print(Back.BLUE + 'Приветствуем Вас в нашем справочнике' + Style.RESET_ALL)
+    print('Наш справочник поддерживает следующие возможности:\n'
+          '1. Записать контакт.\n'
+          '2. Найти контакт\n'
+          '3. Показать все контакты\n'
+          '4. Экспорт контактов\n'
+          '5. Импорт контактов\n'
+          '6. Выход из программы')
 
 
-if __name__ == '__main__':
-    main()
+if name == 'main':
+    main_menu()
