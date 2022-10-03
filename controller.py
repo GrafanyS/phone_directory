@@ -7,7 +7,7 @@ import logger
 import delete
 import modol_export
 import import_mod
-import change_contact
+import contact
 
 
 def main_func():

@@ -19,6 +19,21 @@ def change_contact(data):
                 data[0]['surname'] = input('Введите новую фамилию: ')
                 phone_dir.append(data[0])
 
+            if num == 2:
+                phone_dir.pop(i)
+                data[1]['name'] = input('Введите новое имя: ')
+                phone_dir.append(data[1])
+
+            if num == 3:
+                phone_dir.pop(i)
+                data[2]['tel'] = input('Введите телефон: ')
+                phone_dir.append(data[2])
+
+            if num == 4:
+                phone_dir.pop(i)
+                data[3]['comment'] = input('Введите новую фамилию: ')
+                phone_dir.append(data[3])
+
     with open('data_base.json', 'w') as file:
         json.dump(phone_dir, file, indent=2)
     print('\033[30m\033[42m\033[4m {}\033[0m'.format('Ваш контакт успешно изменен. Переводим '
