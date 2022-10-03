@@ -1,19 +1,23 @@
 import json
 import csv
+from colorama import Fore, Back, Style
 
 
 def export():
-    with open('data_base.json', 'r') as f:
+    with open(jsonFilename, 'r', encoding='utf-8') as f:
         phone_dir = json.load(f)
     count = 0
-    with open("phone_directory_export.csv", mode="w", encoding='utf-8') as w_file:
+    with open(csvFile, mode="w", encoding='utf-8') as w_file:
         file_writer = csv.writer(w_file, delimiter=",", lineterminator="\r")
         file_writer.writerow(["Фамилия\t", "Имя\t", "Телефон\t", "Описание\t"])
         for i in phone_dir:
-            file_writer.writerow([i['surname'],i['name'], i['tel'], i['comment']])
-            count+=1
-    print(f'\033[30m\033[42m\033[4m Экспорт завершен успешно. '
-          f'Всего экспортировано {count} контактов. \033[0m')
+            file_writer.writerow([i['surname'], i['name'], i['tel'], i['comment']])
+            count += 1
+    print(Fore.BLACK + "" + Back.GREEN + f"Экспорт завершен успешно. "
+                                         f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
 
 
-
+csvFilename = r'DB_Directory\phone_directory.csv'
+jsonFilename = r'DB_Directory\phone_directory.json'
+csvFile = r'DB_export\phone_directory_export.csv'
+jsonFile = r'DB_export\phone_directory_export.json'
