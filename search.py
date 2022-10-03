@@ -26,7 +26,7 @@ def check_search_menu():
     while True:
         try:
             num = int(
-                input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, по которому вы хотите найти контакт: ' /
+                input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, по которому вы хотите найти контакт: '
                       + Style.RESET_ALL))
             if 0 <= num <= 1:
                 break
@@ -41,10 +41,10 @@ def check_search_menu():
 
 
 def check_directory():
-    '''
+    """
     Проверка, пустой ли справочник.
     :return:
-    '''
+    """
     try:
         with open('phone_directory.json', 'r') as f:
             phone_dir = json.load(f)
@@ -57,7 +57,7 @@ def check_directory():
 def check_menu_act_contact():
     while True:
         try:
-            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: ' /
+            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: '
                             + Style.RESET_ALL))
             if 0 <= num <= 4:
                 break
@@ -74,7 +74,7 @@ def check_menu_act_contact():
 def check_menu_ch_con():
     while True:
         try:
-            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: ' /
+            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: '
                             + Style.RESET_ALL))
             if 1 <= num <= 4:
                 break
@@ -87,3 +87,11 @@ def check_menu_ch_con():
 
         return
 
+
+def get_vensor():
+    check_main_menu()
+    check_search_menu()
+
+
+if __name__ == '__main__':
+    get_vensor()
