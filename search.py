@@ -2,96 +2,38 @@ import json
 from colorama import Fore, Back, Style
 
 
-# print(Back.BLUE + Fore.BLUE + 'and with a blue background' +Style.RESET_ALL)
-def check_main_menu():
-    while True:
-        try:
-            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: '
-                            + Style.RESET_ALL))
-            if 0 <= num <= 6:
-                break
-            else:
-                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
-                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
-                continue
-        except ValueError:
-            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
 
-    return num
+def gen_person():
+    surname = input('Введите фамилию:')
+    name = input('Введите имя:')
+    tel = input('Введите номер телефона:')
+    description = input('Дополнительная информация:')
+
+    person = {
+        'surname': surname,
+        'name': name,
+        'tel': tel,
+        'description': description
+    }
+    return person
 
 
-#
-
-def check_search_menu():
-    while True:
-        try:
-            num = int(
-                input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, по которому вы хотите найти контакт: '
-                      + Style.RESET_ALL))
-            if 0 <= num <= 1:
-                break
-            else:
-                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
-                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
-                continue
-        except ValueError:
-            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
-
-    return num
-
-
-def check_directory():
-    """
-    Проверка, пустой ли справочник.
-    :return:
-    """
+def write_json(person_dict):
     try:
-        with open('phone_directory.json', 'r') as f:
-            phone_dir = json.load(f)
-            return True
-    except ValueError:
-        print(Fore.BLACK + "" + Back.RED + 'Ваш справочник пока еще пустой!' + Style.RESET_ALL)
-        return False
+        data = json.load(open('phone_directory.json'))
+    except:
+        data = []
+
+    data.append(person_dict)
+
+    with open('phone_directory.json', 'w', encoding='utf-8') as file:
+        json.dump(data, file, indent=4, ensure_ascii=False)
 
 
-def check_menu_act_contact():
-    while True:
-        try:
-            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: '
-                            + Style.RESET_ALL))
-            if 0 <= num <= 4:
-                break
-            else:
-                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
-                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
-                continue
-        except ValueError:
-            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
-
-    return num
+def main():
+    for i in range(1):
+        write_json(gen_person())
 
 
-def check_menu_ch_con():
-    while True:
-        try:
-            num = int(input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, который хотите выполнить: '
-                            + Style.RESET_ALL))
-            if 1 <= num <= 4:
-                break
-            else:
-                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
-                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
-                continue
-        except ValueError:
-            print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
-
-        return
-
-
-def get_vensor():
-    check_main_menu()
-    check_search_menu()
-
-
-if __name__ == '__main__':
-    get_vensor()
+if name == 'main':
+    main()
