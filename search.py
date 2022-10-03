@@ -2,7 +2,6 @@ import json
 from colorama import Fore, Back, Style
 
 
-
 def gen_person():
     surname = input('Введите фамилию:')
     name = input('Введите имя:')
@@ -20,13 +19,13 @@ def gen_person():
 
 def write_json(person_dict):
     try:
-        data = json.load(open('phone_directory.json'))
-    except:
+        data = json.load(open('DB_Directory/phone_directory.json'))
+    except ValueError:
         data = []
 
     data.append(person_dict)
 
-    with open('phone_directory.json', 'w', encoding='utf-8') as file:
+    with open('DB_Directory/phone_directory.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
 
 
@@ -35,5 +34,6 @@ def main():
         write_json(gen_person())
 
 
-if name == 'main':
+# if __name__ == 'main':
     main()
+# print(__name__)

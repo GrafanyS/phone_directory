@@ -18,13 +18,13 @@ def gen_person():
 
 def write_json(person_dict):
     try:
-        data = json.load(open('phone_directory.json'))
+        data = json.load(open('DB_Directory/phone_directory.json'))
     except:
         data = []
 
     data.append(person_dict)
 
-    with open('phone_directory.json', 'w', encoding='utf-8') as file:
+    with open('DB_Directory/phone_directory.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
 
 

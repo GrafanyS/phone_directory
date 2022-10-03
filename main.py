@@ -1,8 +1,9 @@
 from colorama import Fore, Back, Style
 import check
+import controller
 
 
-def main_menu():
+def main_menu() -> object:
     print(Back.BLUE + 'Приветствуем Вас в нашем справочнике' + Style.RESET_ALL)
     print('Наш справочник поддерживает следующие возможности:\n'
           '1. Записать контакт.\n'
@@ -12,8 +13,5 @@ def main_menu():
           '5. Импорт контактов\n'
           '6. Выход из программы')
 
-
-
-if __name__ == '__main__':
-    main()
-
+# if __name__ == '__main__':
+#     main_menu()

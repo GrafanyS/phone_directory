@@ -26,7 +26,7 @@ def check_directory():
     :return:
     """
     try:
-        with open('phone_directory.json', 'r') as f:
+        with open('DB_Directory/phone_directory.json', 'r', encoding='utf-8') as f:
             phone_dir = json.load(f)
             return True
     except ValueError:
