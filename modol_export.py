@@ -1,6 +1,8 @@
+# импорт необходимых библиотек
 import json
 import csv
 from colorama import Fore, Back, Style
+from db_link import *
 
 
 def export():
@@ -16,8 +18,3 @@ def export():
     print(Fore.BLACK + "" + Back.GREEN + f"Экспорт завершен успешно. "
                                          f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
 
-
-csvFilename = r'DB_Directory\phone_directory.csv'
-jsonFilename = r'DB_Directory\phone_directory.json'
-csvFile = r'DB_export\phone_directory_export.csv'
-jsonFile = r'DB_export\phone_directory_export.json'

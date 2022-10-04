@@ -1,3 +1,4 @@
+# импорт необходимых библиотек
 from colorama import Fore, Back, Style
 import json
 import check

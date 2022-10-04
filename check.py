@@ -1,5 +1,7 @@
+# импорт необходимых библиотек
 import json
 from colorama import Fore, Back, Style
+from db_link import *
 
 
 def check_search_menu():
@@ -26,7 +28,7 @@ def check_directory():
     :return:
     """
     try:
-        with open('DB_Directory/phone_directory.json', 'r', encoding='utf-8') as f:
+        with open(jsonFilename, 'r', encoding='utf-8') as f:
             phone_dir = json.load(f)
             return True
     except ValueError:

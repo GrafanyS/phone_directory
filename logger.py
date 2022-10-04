@@ -1,5 +1,7 @@
+# импорт необходимых библиотек
 from datetime import datetime as dt
-
+from db_link import *
+import time
 
 def create_contact(data):
     time = dt.now().strftime('%Y:%B:%d - %H:%M')
@@ -29,3 +31,8 @@ def change_con(new_data):
     time = dt.now().strftime('%Y:%B:%d - %H:%M')
     with open('log.csv', 'a') as file:
         file.write('\n{};Contact change;new contact{}'.format(time, new_data))
+
+start = time.perf_counter()
+# convcsv(jsonobj, csvFile)
+finish = time.perf_counter()
+print(f"Преобразование строк успешно завершено в {finish - start:0.4f} секунд")
