@@ -1,82 +1,72 @@
 [
     {
-        "null": [
-            "hostname",
-            "vendor",
-            "model",
-            "location"
-        ]
+        "id": 0,
+        "surname": "Шагал",
+        "name": "Денис",
+        "tel": "3465635",
+        "description": ""
     },
     {
-        "null": [
-            "sw1",
-            "Cisco",
-            "3750",
-            "London, Best str"
-        ]
+        "id": 1,
+        "surname": "Иванов",
+        "name": "Петр",
+        "tel": "3465674684",
+        "description": "друг"
     },
     {
-        "null": [
-            "sw2",
-            "Cisco",
-            "3850",
-            "Liverpool, Better str"
-        ]
+        "id": 2,
+        "surname": "Петров",
+        "name": "Максим",
+        "tel": "987876675",
+        "description": "знакомый"
     },
     {
-        "null": [
-            "sw3",
-            "Cisco",
-            "3650",
-            "Liverpool, Better str"
-        ]
+        "id": 3,
+        "surname": "Иванов",
+        "name": "Сергей",
+        "tel": "546357367",
+        "description": "кто-то"
     },
     {
-        "null": [
-            "sw4",
-            "Cisco",
-            "3650",
-            "London, Best str"
-        ]
+        "id": 4,
+        "surname": "Сидоров",
+        "name": "Иван",
+        "tel": "54656767",
+        "description": "однажды встретил на улице"
     },
     {
-        "null": [
-            "hostname",
-            "vendor",
-            "model",
-            "location"
-        ]
+        "id": 5,
+        "surname": "Курицын",
+        "name": "Эдуард",
+        "tel": "465356357",
+        "description": "куевкп"
     },
     {
-        "null": [
-            "sw1",
-            "Cisco",
-            "3750",
-            "London, Best str"
-        ]
+        "id": 6,
+        "surname": "Ренжин",
+        "name": "Василий",
+        "tel": "3465667",
+        "description": "выапвп"
     },
     {
-        "null": [
-            "sw2",
-            "Cisco",
-            "3850",
-            "Liverpool, Better str"
-        ]
+        "id": 7,
+        "surname": "Кочегар",
+        "name": "Михаил",
+        "tel": "5476758",
+        "description": "ывнен"
     },
     {
-        "null": [
-            "sw3",
-            "Cisco",
-            "3650",
-            "Liverpool, Better str"
-        ]
+        "id": 8,
+        "surname": "Бумагин",
+        "name": "Василий",
+        "tel": "346547",
+        "description": "фуепкеген"
     },
     {
-        "null": [
-            "sw4",
-            "Cisco",
-            "3650",
-            "London, Best str"
-        ]
+        "id": 9,
+        "surname": "Белов",
+        "name": "Анатолий",
+        "tel": "34657",
+        "description": "вафыпао"
     }
 ]
