@@ -3,37 +3,23 @@ from colorama import Fore, Back, Style
 
 
 
-def gen_person():
-    surname = input('Введите фамилию:')
-    name = input('Введите имя:')
-    tel = input('Введите номер телефона:')
-    description = input('Дополнительная информация:')
-
-    person = {
-        'surname': surname,
-        'name': name,
-        'tel': tel,
-        'description': description
-    }
-    return person
-
-
-def write_json(person_dict):
+def read_json(file):
     try:
-        data = json.load(open('phone_directory.json'))
+         with open('phone_directory.json', 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            return data
     except:
-        data = []
+        print('В базе еще нет ни одного контакта :(')
 
-    data.append(person_dict)
+def search_contact(data):
+    name = input('Введите имя контакта, номер телефона или комментарий, который хотите найти: ')
+    found_contacts = []
+    temp = {1:"surname", 2:"name", 3:"tel", 4:"description"}
+    for index, contact in enumerate(data):
+        if name.lower() in contact["surname"].lower() or name.lower() in contact["name"].lower() or name.lower() in contact["tel"].lower() or name.lower() in contact["description"].lower():
+            found_contacts.append(contact)    
+            print(f'Найден контакт: {contact["id"]} {contact["surname"]} {contact["name"]} {contact["tel"]} {contact["description"]}')    #Выводим заданный контакт      
 
-    with open('phone_directory.json', 'w', encoding='utf-8') as file:
-        json.dump(data, file, indent=4, ensure_ascii=False)
+data = read_json('phone_directory.json')
+search_contact(data)
 
-
-def main():
-    for i in range(1):
-        write_json(gen_person())
-
-
-if name == 'main':
-    main()
