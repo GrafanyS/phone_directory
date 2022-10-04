@@ -1,7 +1,7 @@
 def get_value():
     dictionary = {}
-    dictionary['surname'] = input('input surname: ')
-    dictionary['name'] = input('input name: ')
-    dictionary['tel'] = input('input phone: ')
-    dictionary['comment'] = input('input description: ')
+    dictionary['surname'] = input('Введите фамилию: ')
+    dictionary['name'] = input('Введите имя: ')
+    dictionary['tel'] = input('Введите телефонный номер: ')
+    dictionary['comment'] = input('Введите коментарий: ')
     return dictionary
