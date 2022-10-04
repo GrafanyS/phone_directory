@@ -1,18 +1,33 @@
 import json
 
-def delete_contact(sorted_data, full_data):
+def modify_contact(sorted_data, full_data):
     
-    """Функция находит и удаляет заданную запись c контактом"""
+    """Функция находит и изменяет заданную запись c контактом"""
     temp = []  
     if len(sorted_data)>0:
         for i in sorted_data:
             temp.append(i["id"])
-        index_for_delete = int(input(f'Введите id контакта для удаления из данного списка {temp}: '))     #Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
-        if index_for_delete in temp:
-            confirm = input('Вы уверены, что хотите удалить данный контакт? Да/Нет: ')  # Подтверждение, что пользователь действительно хочет удалить данный контакт
+        index_for_change = int(input(f'Введите id контакта для удаления из данного списка {temp}: '))     #Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
+        if index_for_change in temp:
+            confirm = input('Вы уверены, что хотите изменить данный контакт? Да/Нет: ')  # Подтверждение, что пользователь действительно хочет удалить данный контакт
             if confirm.capitalize() == 'Да':    #Ввод подтверждения
-                del full_data[index_for_delete]    #Если Да, то удаляем контакт из базы
-                return full_data
+                field_to_change = input('Что вы хотите изменить: 1 - Фамилию, 2 - Имя, 3 - номер, 4 - комментарий: ')
+                if field_to_change == '1':
+                    surname = input("Введите новую фамилию: ")
+                    full_data[index_for_change]["surname"] = surname
+                    return full_data
+                if field_to_change == '2':
+                    name = input("Введите новое имя: ")
+                    full_data[index_for_change]["name"] = name
+                    return full_data
+                if field_to_change == '3':
+                    tel = input("Введите новый номер: ")
+                    full_data[index_for_change]["tel"] = tel
+                    return full_data
+                if field_to_change == '4':
+                    description = input("Введите новый комментарий: ")
+                    full_data[index_for_change]["description"] = description
+                    return full_data
             else:    #Иначе, возвращаемся в главное меню
                 return 'Возврат в главное меню'
         else: 
@@ -119,4 +134,4 @@ def delete_contact(sorted_data, full_data):
 # ]
 
 
-# print(delete_contact(sorted_data, full_data))
+# print(modify_contact(sorted_data, full_data))
