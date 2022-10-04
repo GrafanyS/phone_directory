@@ -1,14 +1,15 @@
+from colorama import Fore, Back, Style
 import json
 import check
-
+from db_link import *
 
 def change_contact(data):
-    with open('data_base.json', 'r') as f:
+    with open(jsonFilename, 'r', encoding='utf-8') as f:
         phone_dir = json.load(f)
 
     for i in range(len(phone_dir)):
         if phone_dir[i] == data[0]:
-            print('Что вы хотите изменить:\n'
+            print(Fore.BLACK + "" + Back.BLUE + 'Что вы хотите изменить:' + Style.RESET_ALL + '\n'
                   '1. Фамилию.\n'
                   '2. Имя\n'
                   '3. Номер телефона\n'
@@ -34,7 +35,8 @@ def change_contact(data):
                 data[3]['comment'] = input('Введите новую фамилию: ')
                 phone_dir.append(data[3])
 
-    with open('data_base.json', 'w') as file:
+    with open(jsonFilename, 'w', encoding='utf-8') as file:
         json.dump(phone_dir, file, indent=2)
-    print('\033[30m\033[42m\033[4m {}\033[0m'.format('Ваш контакт успешно изменен. Переводим '
-                                                     'вас в начало меню'))
+    print(Fore.BLACK + "" + Back.GREEN + f'Ваш контакт успешно изменен. Переводим вас в начало меню' + Style.RESET_ALL)
+
+
