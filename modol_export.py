@@ -1,5 +1,6 @@
 import json
 import csv
+import logger
 
 
 def export():
@@ -12,6 +13,7 @@ def export():
         for i in data:
             file_writer.writerow([i["id"], i["surname"],i["name"], i["tel"], i["description"]])
             count+=1
+    logger.export_csv()
     print(f'Экспорт завершен успешно.')
     print(f'Всего экспортировано {count} контактов.')
 

@@ -1,0 +1,5 @@
+2022:October:04 - 19:01;Create new contact;{'id': 21, 'surname': 'Кошелев', 'name': 'Михаил', 'tel': '3535768', 'description': 'цуепкншшлн'}
+2022:October:04 - 19:02;Delete contact;{'id': 21, 'surname': 'Кошелев', 'name': 'Михаил', 'tel': '3535768', 'description': 'цуепкншшлн'}
+2022:October:04 - 19:16;Delete contact;{'id': 20, 'surname': 'Булкин', 'name': 'Сергей', 'tel': '4536768', 'description': 'укекгрвегоен'}
+2022:October:04 - 19:21;Contact change;new contact{'id': 17, 'surname': 'Петров', 'name': 'Петр', 'tel': '35465', 'description': 'увпнрнаш'}
+2022:October:04 - 19:23;Export all contact in .csv

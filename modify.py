@@ -1,4 +1,5 @@
 import json
+import logger
 
 
 def modify_contact(sorted_data, full_data):
@@ -9,8 +10,7 @@ def modify_contact(sorted_data, full_data):
         for i in sorted_data:
             temp.append(i["id"])
         # Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
-        index_for_change = int(
-            input(f'Введите id контакта из данного списка {temp}: '))
+        index_for_change = int(input(f'Введите id контакта из данного списка {temp}: '))
         if index_for_change in temp:
             field_to_change = input(
                 'Что вы хотите изменить: 1 - Фамилию, 2 - Имя, 3 - номер, 4 - комментарий: ')
@@ -19,24 +19,28 @@ def modify_contact(sorted_data, full_data):
                 full_data[index_for_change]["surname"] = surname
                 print(
                     f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                logger.change_con(full_data[index_for_change])
                 return full_data
             elif field_to_change == '2':
                 name = input("Введите новое имя: ")
                 full_data[index_for_change]["name"] = name
                 print(
                     f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                logger.change_con(full_data[index_for_change])
                 return full_data
             elif field_to_change == '3':
                 tel = input("Введите новый номер: ")
                 full_data[index_for_change]["tel"] = tel
                 print(
                     f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                logger.change_con(full_data[index_for_change])
                 return full_data
             elif field_to_change == '4':
                 description = input("Введите новый комментарий: ")
                 full_data[index_for_change]["description"] = description
                 print(
                     f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                logger.change_con(full_data[index_for_change])
                 return full_data
         else:
             return "Вы ввели неверный номер"
@@ -48,21 +52,25 @@ def modify_contact(sorted_data, full_data):
             surname = input("Введите новую фамилию: ")
             full_data[index_for_change]["surname"] = surname
             print(f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            logger.change_con(full_data[index_for_change])
             return full_data
         elif field_to_change == '2':
             name = input("Введите новое имя: ")
             full_data[index_for_change]["name"] = name
             print(f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            logger.change_con(full_data[index_for_change])
             return full_data
         elif field_to_change == '3':
             tel = input("Введите новый номер: ")
             full_data[index_for_change]["tel"] = tel
             print(f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            logger.change_con(full_data[index_for_change])
             return full_data
         elif field_to_change == '4':
             description = input("Введите новый комментарий: ")
             full_data[index_for_change]["description"] = description
             print(f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            logger.change_con(full_data[index_for_change])
             return full_data
     else:
         return 'Возврат в главное меню'
