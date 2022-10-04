@@ -23,8 +23,9 @@ def write_json(person_dict):
             data = json.load(file)
     except:
         data = []
+    last_id = int(data[len(data)-1]["id"])
 
-    person_dict["id"] = len(data)
+    person_dict["id"] = last_id + 1
     data.append(person_dict)
 
 
