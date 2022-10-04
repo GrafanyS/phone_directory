@@ -6,7 +6,7 @@ import search
 import logger
 import delete
 import modol_export
-# import modol_import
+#  import modol_import
 import modify
 
 
@@ -47,12 +47,12 @@ def main_func():
                 found_contacts = search.search_contact(all_contacts)
                 delete.delete_contact(found_contacts, all_contacts)
                 modify.write_json_full(all_contacts)
-                
         elif punct_menu == 6:           #Экспорт
             if check.check_directory(): 
                 modol_export.export()
         else:
             print('Работа со справочников закончена')
             break
+                
         
 

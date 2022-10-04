@@ -26,6 +26,5 @@ def search_contact(data):
             return found_contacts
     except:
         print('В базе такого контакта нет')
-# data = read_json('phone_directory.json')
-# search_contact(data)
+
 
