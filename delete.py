@@ -1,15 +1,20 @@
+import json
+
 def delete_contact(phonebook_data):
     
     """Функция находит и удаляет заданную запись c контактом"""
 
-    # phonebook_data = read_phonebook(phonebook) #В модуле modol_import.py должна быть функция получения данных из файла в виде словаря. Название функции read_phonebook пока задано условно.
+    with open('phone_directory.json, 'r', encoding='utf-8') as f:
+        phonebook_data = json.load(f)
+
+    phonebook_data = (phonebook) #В модуле modol_import.py должна быть функция получения данных из файла в виде словаря. Название функции read_phonebook пока задано условно.
     try:
-        search_item = int(input('Для поиска контакта для удаления введите 1 (если поиск по имени), 2 (если поиск по отчеству), 3 (если поиск по фамилии): '))
-        if 0 < search_item < 4:
+        search_item = int(input('Для поиска контакта для удаления введите 1 (если поиск по фамилии), 2 (если поиск по имени): '))
+        if 0 < search_item < 3:
             name = input('Введите имя контакта, который хотите удалить: ')    #Ввод имени контакта для удаления
             #проверка: существует ли данный контакт. Позднее можно проверку вынести в модуль check, и вставить сюда только функцию проверки
             index_del = []
-            temp = {1:"name", 2:"father_name", 3:"family_name"}   
+            temp = {1:"surname", 2:"name"}   
             for index, dict in enumerate(phonebook_data):
                 while name.lower() == dict[temp[search_item]].lower():
                     index_del.append(index)    
@@ -38,22 +43,22 @@ def delete_contact(phonebook_data):
     except:
         print('Вы ввели не число')
   
-my_phonebook = [{"name": "Иван",
-                "father_name": "Иванович",
-                "family_name": "Иванов",
-                "phone_number": "799968723"},
-                {"name": "Петр",
-                "father_name": "Петрович",
-                "family_name": "Петров",
-                "phone_number": "755568723"},
-                {"name": "Павел",
-                "father_name": "Павлович",
-                "family_name": "Павлов",
-                "phone_number": "744468723"},
-                {"name": "Иван",
-                "father_name": "Павлович",
-                "family_name": "Смирнов",
-                "phone_number": "744468723"}]
+my_phonebook = [{"surname": "Иванов",
+                "name": "Иван",
+                "tel": "799968723",
+                "description": "бла бла бла"},
+                {"surname": "Петров",
+                "name": "Петр",
+                "tel": "755568723",
+                "description": "бла бла бла"},
+                {"surname": "Павлов",
+                "name": "Павел",
+                "tel": "744468723",
+                "description": "бла бла бла"},
+                {"surname": "Смирнов",
+                "name": "Иван",
+                "tel": "744468723",
+                "description": "бла бла бла"}]
                 
 
 print(delete_contact(my_phonebook))
