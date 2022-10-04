@@ -1,82 +1,37 @@
 [
     {
-        "null": [
-            "hostname",
-            "vendor",
-            "model",
-            "location"
-        ]
+        "id": 4,
+        "surname": "Иванов",
+        "name": "Иван",
+        "tel": "345357",
+        "description": "выпвапо"
     },
     {
-        "null": [
-            "sw1",
-            "Cisco",
-            "3750",
-            "London, Best str"
-        ]
+        "id": 5,
+        "surname": "Петров",
+        "name": "Василий",
+        "tel": "346678",
+        "description": "ывпвоарлпо"
     },
     {
-        "null": [
-            "sw2",
-            "Cisco",
-            "3850",
-            "Liverpool, Better str"
-        ]
+        "id": 6,
+        "surname": "Кучин",
+        "name": "Александр",
+        "tel": "3463568768",
+        "description": "ывпаоорпл"
     },
     {
-        "null": [
-            "sw3",
-            "Cisco",
-            "3650",
-            "Liverpool, Better str"
-        ]
+        "id": 7,
+        "surname": "Кривобоков",
+        "name": "Михаил",
+        "tel": "346587",
+        "description": "выапрпрлл"
     },
     {
-        "null": [
-            "sw4",
-            "Cisco",
-            "3650",
-            "London, Best str"
-        ]
-    },
-    {
-        "null": [
-            "hostname",
-            "vendor",
-            "model",
-            "location"
-        ]
-    },
-    {
-        "null": [
-            "sw1",
-            "Cisco",
-            "3750",
-            "London, Best str"
-        ]
-    },
-    {
-        "null": [
-            "sw2",
-            "Cisco",
-            "3850",
-            "Liverpool, Better str"
-        ]
-    },
-    {
-        "null": [
-            "sw3",
-            "Cisco",
-            "3650",
-            "Liverpool, Better str"
-        ]
-    },
-    {
-        "null": [
-            "sw4",
-            "Cisco",
-            "3650",
-            "London, Best str"
-        ]
+        "id": 8,
+        "surname": "Иванов",
+        "name": "Иван",
+        "tel": "235454787",
+        "description": "афукпоал"
     }
 ]

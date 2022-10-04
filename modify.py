@@ -1,41 +1,78 @@
 import json
 
+
 def modify_contact(sorted_data, full_data):
-    
     """Функция находит и изменяет заданную запись c контактом"""
-    temp = []  
-    if len(sorted_data)>0:
+    temp = []
+
+    if len(sorted_data) > 1:
         for i in sorted_data:
             temp.append(i["id"])
-        index_for_change = int(input(f'Введите id контакта для удаления из данного списка {temp}: '))     #Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
+        # Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
+        index_for_change = int(
+            input(f'Введите id контакта из данного списка {temp}: '))
         if index_for_change in temp:
-            confirm = input('Вы уверены, что хотите изменить данный контакт? Да/Нет: ')  # Подтверждение, что пользователь действительно хочет удалить данный контакт
-            if confirm.capitalize() == 'Да':    #Ввод подтверждения
-                field_to_change = input('Что вы хотите изменить: 1 - Фамилию, 2 - Имя, 3 - номер, 4 - комментарий: ')
-                if field_to_change == '1':
-                    surname = input("Введите новую фамилию: ")
-                    full_data[index_for_change]["surname"] = surname
-                    return full_data
-                if field_to_change == '2':
-                    name = input("Введите новое имя: ")
-                    full_data[index_for_change]["name"] = name
-                    return full_data
-                if field_to_change == '3':
-                    tel = input("Введите новый номер: ")
-                    full_data[index_for_change]["tel"] = tel
-                    return full_data
-                if field_to_change == '4':
-                    description = input("Введите новый комментарий: ")
-                    full_data[index_for_change]["description"] = description
-                    return full_data
-            else:    #Иначе, возвращаемся в главное меню
-                return 'Возврат в главное меню'
-        else: 
+            field_to_change = input(
+                'Что вы хотите изменить: 1 - Фамилию, 2 - Имя, 3 - номер, 4 - комментарий: ')
+            if field_to_change == '1':
+                surname = input("Введите новую фамилию: ")
+                full_data[index_for_change]["surname"] = surname
+                print(
+                    f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                return full_data
+            elif field_to_change == '2':
+                name = input("Введите новое имя: ")
+                full_data[index_for_change]["name"] = name
+                print(
+                    f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                return full_data
+            elif field_to_change == '3':
+                tel = input("Введите новый номер: ")
+                full_data[index_for_change]["tel"] = tel
+                print(
+                    f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                return full_data
+            elif field_to_change == '4':
+                description = input("Введите новый комментарий: ")
+                full_data[index_for_change]["description"] = description
+                print(
+                    f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                return full_data
+        else:
             return "Вы ввели неверный номер"
+    elif len(sorted_data) == 1:
+        index_for_change = sorted_data[0]["id"]
+        field_to_change = input(
+            'Что вы хотите изменить: 1 - Фамилию, 2 - Имя, 3 - номер, 4 - комментарий: ')
+        if field_to_change == '1':
+            surname = input("Введите новую фамилию: ")
+            full_data[index_for_change]["surname"] = surname
+            print(f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            return full_data
+        elif field_to_change == '2':
+            name = input("Введите новое имя: ")
+            full_data[index_for_change]["name"] = name
+            print(f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            return full_data
+        elif field_to_change == '3':
+            tel = input("Введите новый номер: ")
+            full_data[index_for_change]["tel"] = tel
+            print(f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            return full_data
+        elif field_to_change == '4':
+            description = input("Введите новый комментарий: ")
+            full_data[index_for_change]["description"] = description
+            print(f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            return full_data
     else:
-        return 'Возврат в главное меню'  
+        return 'Возврат в главное меню'
+        
+def write_json_full(data):
+    with open('phone_directory.json', 'w', encoding='utf-8') as file:
+        json.dump(data, file, indent=4, ensure_ascii=False)
+    print('База данных успешно обновлена')      
 
-  
+
 # sorted_data = [
 #     {
 #         "id": 0,

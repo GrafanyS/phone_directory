@@ -7,11 +7,16 @@ def delete_contact(sorted_data, full_data):
     if len(sorted_data)>0:
         for i in sorted_data:
             temp.append(i["id"])
-        index_for_delete = int(input(f'Введите id контакта для удаления из данного списка {temp}: '))     #Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
+        index_for_delete = int(input(f'Введите id контакта из данного списка {temp}: '))     #Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
         if index_for_delete in temp:
             confirm = input('Вы уверены, что хотите удалить данный контакт? Да/Нет: ')  # Подтверждение, что пользователь действительно хочет удалить данный контакт
             if confirm.capitalize() == 'Да':    #Ввод подтверждения
-                del full_data[index_for_delete]    #Если Да, то удаляем контакт из базы
+                for item in full_data:
+                    if index_for_delete == item["id"]:
+                        print(item)
+                        full_data.remove(item)    #Если Да, то удаляем контакт из базы
+                print('Контакт удален')
+                print(full_data)
                 return full_data
             else:    #Иначе, возвращаемся в главное меню
                 return 'Возврат в главное меню'
@@ -19,6 +24,7 @@ def delete_contact(sorted_data, full_data):
             return "Вы ввели неверный номер"
     else:
         return 'Возврат в главное меню'  
+
 
   
 # sorted_data = [
@@ -53,13 +59,7 @@ def delete_contact(sorted_data, full_data):
 #         "tel": "3465635",
 #         "description": ""
 #     },
-#     {
-#         "id": 1,
-#         "surname": "Иванов",
-#         "name": "Петр",
-#         "tel": "3465674684",
-#         "description": "друг"
-#     },
+#     
 #     {
 #         "id": 2,
 #         "surname": "Петров",

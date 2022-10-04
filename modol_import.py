@@ -30,52 +30,53 @@ def convjson(csvFilename, jsonFilename):
     with open(csvFilename, 'r', encoding = 'utf-8') as csvfile:
         csvRead = csv.DictReader(csvfile) 
          
-        # Преобразование строк в списка и добавление его к данным
+        # Преобразование строк в список и добавление его к данным
         for rows in csvRead:
             data.append(rows)
  
     # сброс данных
     with open(jsonFilename, 'w', encoding = 'utf-8') as jsonfile: 
-        jsonString = json.dumps(data, indent=4)
+        jsonString = json.dumps(data)
         jsonfile.write(jsonString)
 
-  
-
-# имена файлов
-csvFilename = r'phone_directory.csv'
-jsonFilename = r'phone_directory.json'
-csvFile = r'phone_directory1.csv'
-jsonFile = r'phone_directory1.json'
+convjson('phone_directory.csv','phone_directory.json')
 
 
-start = time.perf_counter()
-# Вызов функции преобразования
-convjson(csvFilename, jsonFilename)
-finish = time.perf_counter()
-print(f"Преобразование строк успешно завершено в {finish - start:0.4f} секунд")
+# # имена файлов
+# csvFilename = r'phone_directory.csv'
+# jsonFilename = r'phone_directory.json'
+# csvFile = r'phone_directory1.csv'
+# jsonFile = r'phone_directory1.json'
 
 
-with open(jsonFile, 'r') as jsonfile:
-    data = jsonfile.read()
-    jsonobj = json.loads(data)
+# start = time.perf_counter()
+# # Вызов функции преобразования
+# convjson(csvFilename, jsonFilename)
+# finish = time.perf_counter()
+# print(f"Преобразование строк успешно завершено в {finish - start:0.4f} секунд")
 
 
-def convcsv(input_json, output_path):
-    keylist = []
-    for key in jsonobj[0]:
-        keylist.append(key)
-    f = csv.writer(open(output_path, "w"))
-    f.writerow(keylist)
-
-    for record in jsonobj:
-        currentrecord = []
-    for key in keylist:
-      currentrecord.append(record[key])
-      f.writerow(currentrecord)
+# with open(jsonFile, 'r') as jsonfile:
+#     data = jsonfile.read()
+#     jsonobj = json.loads(data)
 
 
-start = time.perf_counter()
-convcsv(jsonobj, csvFile)
-finish = time.perf_counter()
-print(f"Преобразование строк успешно завершено в {finish - start:0.4f} секунд")
+# def convcsv(input_json, output_path):
+#     keylist = []
+#     for key in jsonobj[0]:
+#         keylist.append(key)
+#     f = csv.writer(open(output_path, "w"))
+#     f.writerow(keylist)
+
+#     for record in jsonobj:
+#         currentrecord = []
+#     for key in keylist:
+#       currentrecord.append(record[key])
+#       f.writerow(currentrecord)
+
+
+# start = time.perf_counter()
+# convcsv(jsonobj, csvFile)
+# finish = time.perf_counter()
+# print(f"Преобразование строк успешно завершено в {finish - start:0.4f} секунд")
 

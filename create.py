@@ -24,7 +24,7 @@ def write_json(person_dict):
     except:
         data = []
 
-    person_dict['id'] = len(data)
+    person_dict["id"] = len(data)
     data.append(person_dict)
 
 
@@ -38,5 +38,5 @@ def main():
         write_json(gen_person())
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()

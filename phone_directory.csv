@@ -1,5 +1,6 @@
-hostname,vendor,model,location
-sw1,Cisco,3750,"London, Best str"
-sw2,Cisco,3850,"Liverpool, Better str"
-sw3,Cisco,3650,"Liverpool, Better str"
-sw4,Cisco,3650,"London, Best str"
+id,surname,name,tel,description
+4,Иванов,Иван,345357,выпвапо
+5,Петров,Василий,346678,ывпвоарлпо
+6,Кучин,Александр,3463568768,ывпаоорпл
+7,Кривобоков,Михаил,346587,выапрпрлл
+8,Иванов,Иван,235454787,афукпоал
