@@ -8,7 +8,7 @@ def modify_contact(sorted_data, full_data):
 
     if len(sorted_data) > 1:
         for i in sorted_data:
-            temp.append(i["id"])
+            temp.append(int(i["id"]))
         # Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
         id_for_change = int(input(f'Введите id контакта из данного списка {temp}: '))
         if id_for_change in temp:
@@ -86,7 +86,7 @@ def take_id_from_dictionary(sorted_data):
 def search_of_index_to_modify(id, full_data):
     for i, item in enumerate(full_data):
             for key, val in item.items():
-                if key == 'id' and val == id:
+                if key == "id" and val == id:
                     index_for_change = i
     return index_for_change
 

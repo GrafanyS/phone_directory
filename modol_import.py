@@ -43,7 +43,7 @@ def from_txt_to_json():
                 line = line.split(':')
                 data.append(line)
     for i in range(0,len(data)-4,5):
-        person = {data[i][0]: data[i][1],
+        person = {data[i][0]: int(data[i][1]),
         data[i+1][0]: data[i+1][1],
         data[i+2][0]: data[i+2][1],
         data[i+3][0]: data[i+3][1],

@@ -44,3 +44,6 @@
 2022:October:05 - 15:23;Export all contact in .csv
 2022:October:05 - 17:22;Import all contact from .txt
 2022:October:05 - 17:23;Import all contact from .txt
+2022:October:05 - 18:53;Import all contact from .txt
+2022:October:05 - 18:56;Import all contact from .txt
+2022:October:05 - 18:56;Contact change;new contact{'id': 8, 'surname': 'Иванов', 'name': 'Федор', 'tel': '89524875269', 'description': 'сосед'}
