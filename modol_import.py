@@ -1,11 +1,8 @@
 # импорт необходимых библиотек
-import os
-import csv
-import json
+import csv, json
 from db_link import *
 from colorama import Fore, Back, Style
-import time
-import pandas as pd
+
 
 def import_csv():
     result = []
@@ -31,7 +28,7 @@ def import_csv():
 
 def import_json():
     result = []
-    with open(csvFilename, "r", encoding='utf-8') as r_file:
+    with open(csvFile, "r", encoding='utf-8') as r_file:
         file_reader = csv.reader(r_file, delimiter=",")
         count = 0
         for row in file_reader:
@@ -41,31 +38,16 @@ def import_json():
 
             else:
                 temp_dict = {
-                    'surname': row[0], 'name': row[1], 'tel': row[2], 'comment': row[3]}
+                    'id': row[0], 'surname': row[1], 'name': row[2], 'tel': row[3], 'comment': row[4]}
                 result.append(temp_dict)
 
             count += 1
     with open(jsonFilename, 'w', encoding='utf-8') as file:
-        json.dump(result, file, indent=2)
+        json.dump(result, file, indent=2, ensure_ascii=False)
 
     print(Fore.BLACK + "" + Back.GREEN + f'Импорт завершен успешно. '
           f'Всего импортировано {count - 1} контактов.' + Style.RESET_ALL)
 
 
-
-
-
-
-
-
-def convcsv():
-    with open(jsonFilename, 'r', encoding='utf-8') as inputfile:
-        df = pd.read_json(inputfile)
-
-    df.to_csv(csvFile, encoding='utf-8', index=False)
-
-start = time.perf_counter()
-convcsv()
-finish = time.perf_counter()
-print(Fore.BLACK + "" + Back.GREEN + f'Импорт завершен успешно. '
-      f'Всего импортировано {finish - start:0.4f} контактов.' + Style.RESET_ALL)
+import_csv()
+import_json()
