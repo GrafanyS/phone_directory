@@ -1,7 +1,7 @@
 # импорт необходимых библиотек
 from datetime import datetime as dt
 from db_link import *
-
+import time
 
 def create_contact(data):
     time = dt.now().strftime('%d-%b-%y %H:%M:%S')
@@ -38,8 +38,9 @@ def change_con(data):
             f'{time} : {data}; Contact change;new contact;\n')
         
 
-# start = time.perf_counter()
-# change_con(LOG)
-# import_csv(LOG)
-# finish = time.perf_counter()
-# print(f"Преобразование строк успешно завершено в {finish - start:0.4f} секунд")
+start = time.perf_counter()
+change_con(LOG)
+import_csv(LOG)
+finish = time.perf_counter()
+print(f"Преобразование строк успешно завершено в {finish - start:0.4f} секунд")
+
