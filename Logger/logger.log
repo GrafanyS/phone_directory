@@ -1,0 +1,16 @@
+04-Oct-22 19:04:52 : Logger/logger.log; Import all contact from .csv;
+05-Oct-22 09:43:15 : Logger/logger.log; Contact change;new contact;
+05-Oct-22 09:43:15 : Logger/logger.log; Import all contact from .csv;
+05-Oct-22 12:21:50 : Logger/logger.log; Contact change;new contact;
+05-Oct-22 12:21:50 : Logger/logger.log; Import all contact from .csv;
+05-Oct-22 12:29:44 : Logger/logger.log; Contact change;new contact;
+05-Oct-22 12:29:44 : Logger/logger.log; Import all contact from .csv;
+05-Oct-22 12:30:08 : Logger/logger.log; Contact change;new contact;
+05-Oct-22 12:30:08 : Logger/logger.log; Import all contact from .csv;
+05-Oct-22 12:49:17 : Logger/logger.log; Contact change;new contact;
+05-Oct-22 12:49:17 : Logger/logger.log; Import all contact from .csv;
+05-Oct-22 13:42:37 : {'surname': 'Валетов', 'name': 'Андрей', 'tel': '+375297009823', 'comment': 'шутка номер'}; Create new contact;
+05-Oct-22 13:47:56 : {'surname': 'Гикрамин', 'name': 'Артур', 'tel': '+71646432164', 'comment': 'шутка'}; Create new contact;
+05-Oct-22 16:42:40 : {'surname': 'Сидоров', 'name': 'Сидор', 'tel': '7777777', 'comment': 'сидор'}; Create new contact;
+05-Oct-22 16:45:52 : {'id': '10', 'surname': 'Cbljhjd', 'name': 'Сидор', 'tel': '777755', 'comment': 'чвавы'}; Create new contact;
+05-Oct-22 17:29:15 : {'id': '11', 'surname': 'Пыжиков', 'name': 'Вадим', 'tel': '5555555', 'description': 'чижик пыжик'}; Create new contact;
