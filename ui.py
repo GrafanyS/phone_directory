@@ -5,12 +5,8 @@ from colorama import Fore, Back, Style
 
 def get_value():
     print('Для занесения контакта в справочник заполните поочередно данные: ')
-    dict_ph = {}
-    dict_ph['id'] = input('id: ')
-    dict_ph['surname'] = input('Введите фамилию: ')
-    dict_ph['name'] = input('Введите имя: ')
-    dict_ph['tel'] = input('Введите номер: ')
-    dict_ph['description'] = input('Комментарий: ')
+    dict_ph = {'id': input('id: '), 'surname': input('Введите фамилию: '), 'name': input('Введите имя: '),
+               'tel': input('Введите номер: '), 'description': input('Комментарий: ')}
     print('#' * 50)
     return dict_ph
 

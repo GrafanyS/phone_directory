@@ -19,7 +19,7 @@ def import_csv():
                 result.append(temp_dict)
 
             count += 1
-    with open(jsonFilename, 'w', encoding='utf-8') as file:
+    with open(jsonFile, 'w', encoding='utf-8') as file:
         json.dump(result, file, indent=2)
 
     print(Fore.BLACK + "" + Back.GREEN + f'Импорт завершен успешно. '
@@ -28,7 +28,7 @@ def import_csv():
 
 def import_json():
     result = []
-    with open(csvFile, "r", encoding='utf-8') as r_file:
+    with open(csvFilename, "r", encoding='utf-8') as r_file:
         file_reader = csv.reader(r_file, delimiter=",")
         count = 0
         for row in file_reader:
@@ -42,7 +42,7 @@ def import_json():
                 result.append(temp_dict)
 
             count += 1
-    with open(jsonFilename, 'w', encoding='utf-8') as file:
+    with open(jsonFile, 'w', encoding='utf-8') as file:
         json.dump(result, file, indent=2, ensure_ascii=False)
 
     print(Fore.BLACK + "" + Back.GREEN + f'Импорт завершен успешно. '

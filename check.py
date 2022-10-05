@@ -4,7 +4,6 @@ from colorama import Fore, Back, Style
 from db_link import *
 
 
-
 def check_search_menu():
     while True:
         try:

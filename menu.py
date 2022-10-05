@@ -12,11 +12,15 @@ def main_menu():
           '4. Экспорт контактов\n'
           '5. Импорт контактов\n'
           '6. Выход из программы')
- 
+
 
 def menu_for_search():
     print('Возможен поиск по разным полям:\n'
-          '1. По фамилии')
+          '1. id: \n'
+          '2. Фамилию: \n'
+          '3. Имя: \n'
+          '4. Номер телефона: \n'
+          '5. Описание: ')
 
 
 def action_with_contact():
@@ -34,5 +38,5 @@ def action_with_contact():
 #     action_with_contact()
 
 
-# if __name__ == '__main__': 
+# if __name__ == '__main__':
 #     main_menu()

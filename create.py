@@ -18,6 +18,5 @@ def write_json(person_dict):
     print(Fore.BLUE + 'Контакт успешно добавлен\n' + Style.RESET_ALL)
 
 
-
-if __name__ == '__main__':    
+if __name__ == '__main__':
     write_json()
