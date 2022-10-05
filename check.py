@@ -4,6 +4,7 @@ from colorama import Fore, Back, Style
 from db_link import *
 
 
+
 def check_search_menu():
     while True:
         try:
@@ -13,8 +14,8 @@ def check_search_menu():
             if 0 <= num <= 1:
                 break
             else:
-                print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
-                print(Fore.BLACK + "" + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
+                # print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)
+                print(Fore.RED + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
                 continue
         except ValueError:
             print(Fore.BLACK + "" + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
@@ -33,6 +34,7 @@ def check_directory():
             return True
     except ValueError:
         print(Fore.BLACK + "" + Back.RED + 'Ваш справочник пока еще пустой!' + Style.RESET_ALL)
+
         return False
 
 

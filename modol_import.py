@@ -49,5 +49,5 @@ def import_json():
           f'Всего импортировано {count - 1} контактов.' + Style.RESET_ALL)
 
 
-import_csv()
-import_json()
+# import_csv()
+# import_json()

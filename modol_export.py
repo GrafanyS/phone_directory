@@ -6,7 +6,7 @@ from db_link import *
 
 
 def export_csv():
-    with open(jsonFilename, 'r', encoding='utf-8') as f:
+    with open(jsonFile, 'r', encoding='utf-8') as f:
         phone_dir = json.load(f)
     count = 0
     with open(csvFile, mode="w", encoding='utf-8') as w_file:
@@ -21,4 +21,4 @@ def export_csv():
                                          f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
 
 
-export_csv()
+# export_csv()
