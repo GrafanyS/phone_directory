@@ -35,11 +35,3 @@ def write_json(person_dict):
 
 
 
-
-def main():
-    for i in range(1):
-        write_json(gen_person())
-
-
-# if __name__ == '__main__':
-#     main()
