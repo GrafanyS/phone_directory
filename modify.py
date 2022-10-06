@@ -1,152 +1,102 @@
+# импорт необходимых библиотек
 import json
-import  csv
+import logger
 from db_link import *
 
 
-# def modify_contact(sorted_data, full_data):
-#     """Функция находит и изменяет заданную запись с контактом"""
-#     temp = []
-#     if len(sorted_data) > 0:
-#         for i in sorted_data:
-#             temp.append(i["id"])
-#         index_for_change = int(input(
-#             f'Введите id контакта для удаления из данного списка {temp}: '))  # Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
-#         if index_for_change in temp:
-#             confirm = input(
-#                 'Вы уверены, что хотите изменить данный контакт? Да/Нет: ')  # Подтверждение, что пользователь действительно хочет удалить данный контакт
-#             if confirm.capitalize() == 'Да':  # Ввод подтверждения
-#                 field_to_change = input('Что вы хотите изменить: 1 - Фамилию, 2 - Имя, 3 - номер, 4 - комментарий: ')
-#                 if field_to_change == '1':
-#                     surname = input("Введите новую фамилию: ")
-#                     full_data[index_for_change]["surname"] = surname
-#                     return full_data
-#                 if field_to_change == '2':
-#                     name = input("Введите новое имя: ")
-#                     full_data[index_for_change]["name"] = name
-#                     return full_data
-#                 if field_to_change == '3':
-#                     tel = input("Введите новый номер: ")
-#                     full_data[index_for_change]["tel"] = tel
-#                     return full_data
-#                 if field_to_change == '4':
-#                     description = input("Введите новый комментарий: ")
-#                     full_data[index_for_change]["description"] = description
-#                     return full_data
-#             else:  # Иначе, возвращаемся в главное меню
-#                 return 'Возврат в главное меню'
-#         else:
-#             return "Вы ввели неверный номер"
-#     else:
-#         return 'Возврат в главное меню'
-def export():
-    with open(jsonFilename, 'r') as f:
-        phone_dir = json.load(f)
-    count = 0
-    with open(csvFile, mode="w", encoding='utf-8') as w_file:
-        file_writer = csv.writer(w_file, delimiter=",", lineterminator="\r")
-        file_writer.writerow(["Фамилия\t", "Имя\t", "Телефон\t", "Описание\t"])
-        for i in phone_dir:
-            file_writer.writerow([i['surname'],i['name'], i['tel'], i['comment']])
-            count+=1
-    print(f'\033[30m\033[42m\033[4m Экспорт завершен успешно. '
-          f'Всего экспортировано {count} контактов. \033[0m')
+def modify_contact(sorted_data, full_data):
+    """Функция находит и изменяет заданную запись c контактом"""
+    temp = []
 
-    # sorted_data = [
-#     {
-#         "id": 0,
-#         "surname": "Шагал",
-#         "name": "Денис",
-#         "tel": "3465635",
-#         "description": ""
-#     },
-#     {
-#         "id": 2,
-#         "surname": "Петров",
-#         "name": "Максим",
-#         "tel": "987876675",
-#         "description": "знакомый"
-#     },
-#     {
-#         "id": 6,
-#         "surname": "Ренжин",
-#         "name": "Василий",
-#         "tel": "3465667",
-#         "description": "выапвп"
-#     }
-# ]
-
-# full_data = [
-#     {
-#         "id": 0,
-#         "surname": "Шагал",
-#         "name": "Денис",
-#         "tel": "3465635",
-#         "description": ""
-#     },
-#     {
-#         "id": 1,
-#         "surname": "Иванов",
-#         "name": "Петр",
-#         "tel": "3465674684",
-#         "description": "друг"
-#     },
-#     {
-#         "id": 2,
-#         "surname": "Петров",
-#         "name": "Максим",
-#         "tel": "987876675",
-#         "description": "знакомый"
-#     },
-#     {
-#         "id": 3,
-#         "surname": "Иванов",
-#         "name": "Сергей",
-#         "tel": "546357367",
-#         "description": "кто-то"
-#     },
-#     {
-#         "id": 4,
-#         "surname": "Сидоров",
-#         "name": "Иван",
-#         "tel": "54656767",
-#         "description": "однажды встретил на улице"
-#     },
-#     {
-#         "id": 5,
-#         "surname": "Курицын",
-#         "name": "Эдуард",
-#         "tel": "465356357",
-#         "description": "куевкп"
-#     },
-#     {
-#         "id": 6,
-#         "surname": "Ренжин",
-#         "name": "Василий",
-#         "tel": "3465667",
-#         "description": "выапвп"
-#     },
-#     {
-#         "id": 7,
-#         "surname": "Кочегар",
-#         "name": "Михаил",
-#         "tel": "5476758",
-#         "description": "ывнен"
-#     },
-#     {
-#         "id": 8,
-#         "surname": "Бумагин",
-#         "name": "Василий",
-#         "tel": "346547",
-#         "description": "фуепкеген"
-#     },
-#     {
-#         "id": 9,
-#         "surname": "Белов",
-#         "name": "Анатолий",
-#         "tel": "34657",
-#         "description": "вафыпао"
-#     }
-# ]
+    if len(sorted_data) > 1:
+        for i in sorted_data:
+            temp.append(int(i["id"]))
+        # Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
+        id_for_change = int(
+            input(f'Введите id контакта из данного списка {temp}: '))
+        if id_for_change in temp:
+            index_for_change = search_of_index_to_modify(
+                id_for_change, full_data)
+            field_to_change = int(input(
+                'Что вы хотите изменить: 1 - Фамилию, 2 - Имя, 3 - номер, 4 - комментарий: '))
+            if field_to_change == 1:
+                surname = input("Введите новую фамилию: ")
+                full_data[index_for_change]["surname"] = surname
+                print(
+                    f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                logger.change_con(full_data[index_for_change])
+                return full_data
+            elif field_to_change == 2:
+                name = input("Введите новое имя: ")
+                full_data[index_for_change]["name"] = name
+                print(
+                    f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                logger.change_con(full_data[index_for_change])
+                return full_data
+            elif field_to_change == 3:
+                tel = input("Введите новый номер: ")
+                full_data[index_for_change]["tel"] = tel
+                print(
+                    f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                logger.change_con(full_data[index_for_change])
+                return full_data
+            elif field_to_change == 4:
+                description = input("Введите новый комментарий: ")
+                full_data[index_for_change]["description"] = description
+                print(
+                    f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+                logger.change_con(full_data[index_for_change])
+                return full_data
+        else:
+            print("Вы ввели неверный номер")
+            return False
+    elif len(sorted_data) == 1:
+        #Поиск индекса записи в общей базе, которую нужно изменить
+        id_for_change = take_id_from_dictionary(sorted_data)
+        index_for_change = search_of_index_to_modify(id_for_change, full_data)
+        field_to_change = input(
+            'Что вы хотите изменить: 1 - Фамилию, 2 - Имя, 3 - номер, 4 - комментарий: ')
+        if field_to_change == '1':
+            surname = input("Введите новую фамилию: ")
+            full_data[index_for_change]["surname"] = surname
+            print(
+                f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            logger.change_con(full_data[index_for_change])
+            return full_data
+        elif field_to_change == '2':
+            name = input("Введите новое имя: ")
+            full_data[index_for_change]["name"] = name
+            print(
+                f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            logger.change_con(full_data[index_for_change])
+            return full_data
+        elif field_to_change == '3':
+            tel = input("Введите новый номер: ")
+            full_data[index_for_change]["tel"] = tel
+            print(
+                f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            logger.change_con(full_data[index_for_change])
+            return full_data
+        elif field_to_change == '4':
+            description = input("Введите новый комментарий: ")
+            full_data[index_for_change]["description"] = description
+            print(
+                f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} {full_data[index_for_change]["description"]}')
+            logger.change_con(full_data[index_for_change])
+            return full_data
+    else:
+        print('Возврат в главное меню')
+        return False
 
 
-# print(modify_contact(sorted_data, full_data))
+def take_id_from_dictionary(sorted_data):
+    id = sorted_data[0]["id"]
+    return id
+
+
+def search_of_index_to_modify(id, full_data):
+    for i, item in enumerate(full_data):
+        for key, val in item.items():
+            if key == "id" and val == id:
+                index_for_change = i
+    return index_for_change
