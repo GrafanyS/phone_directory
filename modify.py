@@ -5,7 +5,7 @@ from db_link import *
 
 
 def modify_contact(sorted_data, full_data):
-    """Функция находит и изменяет заданную запись c контактом"""
+    """Функция находит и изменяет заданную запись с контактом"""
     temp = []
 
     if len(sorted_data) > 1:
@@ -23,7 +23,7 @@ def modify_contact(sorted_data, full_data):
                 print(
                     f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]}'
                     f' {full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]}'
-                    f' {full_data[index_for_change]["comment"]}')
+                    f' {full_data[index_for_change]["description"]}')
                 logger.change_con(full_data[index_for_change])
                 return full_data
             elif field_to_change == 2:
@@ -32,7 +32,7 @@ def modify_contact(sorted_data, full_data):
                 print(
                     f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} '
                     f'{full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} '
-                    f'{full_data[index_for_change]["comment"]}')
+                    f'{full_data[index_for_change]["description"]}')
                 logger.change_con(full_data[index_for_change])
                 return full_data
             elif field_to_change == 3:
@@ -41,7 +41,7 @@ def modify_contact(sorted_data, full_data):
                 print(
                     f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} '
                     f'{full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} '
-                    f'{full_data[index_for_change]["comment"]}')
+                    f'{full_data[index_for_change]["description"]}')
                 logger.change_con(full_data[index_for_change])
                 return full_data
             elif field_to_change == 4:
@@ -50,7 +50,7 @@ def modify_contact(sorted_data, full_data):
                 print(
                     f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} '
                     f'{full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} '
-                    f'{full_data[index_for_change]["comment"]}')
+                    f'{full_data[index_for_change]["description"]}')
                 logger.change_con(full_data[index_for_change])
                 return full_data
         else:
@@ -67,7 +67,7 @@ def modify_contact(sorted_data, full_data):
             print(
                 f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} '
                 f'{full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} '
-                f'{full_data[index_for_change]["comment"]}')
+                f'{full_data[index_for_change]["description"]}')
             logger.change_con(full_data[index_for_change])
             return full_data
         elif field_to_change == '2':
@@ -76,7 +76,7 @@ def modify_contact(sorted_data, full_data):
             print(
                 f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} '
                 f'{full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} '
-                f'{full_data[index_for_change]["comment"]}')
+                f'{full_data[index_for_change]["description"]}')
             logger.change_con(full_data[index_for_change])
             return full_data
         elif field_to_change == '3':
@@ -85,7 +85,7 @@ def modify_contact(sorted_data, full_data):
             print(
                 f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} '
                 f'{full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} '
-                f'{full_data[index_for_change]["comment"]}')
+                f'{full_data[index_for_change]["description"]}')
             logger.change_con(full_data[index_for_change])
             return full_data
         elif field_to_change == '4':
@@ -94,7 +94,7 @@ def modify_contact(sorted_data, full_data):
             print(
                 f'Измененный контакт: {full_data[index_for_change]["id"]} {full_data[index_for_change]["surname"]} '
                 f'{full_data[index_for_change]["name"]} {full_data[index_for_change]["tel"]} '
-                f'{full_data[index_for_change]["comment"]}')
+                f'{full_data[index_for_change]["description"]}')
             logger.change_con(full_data[index_for_change])
             return full_data
     else:

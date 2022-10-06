@@ -6,12 +6,12 @@ from db_link import *
 
 def check_search_menu():
     """
-    Проверка корректности ввода пунка меню.
+    Проверка корректности ввода пункт меню.
     """
     while True:
         try:
             num = int(
-                input(Fore.BLUE + 'Введите номер пункта возможности: '+ Style.RESET_ALL))
+                input(Fore.BLUE + 'Введите номер пункта возможности: ' + Style.RESET_ALL))
             if 0 <= num <= 9:
                 break
             else:                

@@ -30,14 +30,14 @@ def delete_contact(sorted_data, full_data):
             return False
     elif len(sorted_data) == 1:
         # Подтверждение, что пользователь действительно хочет удалить данный контакт
-        confirm = input(Back.RED + 'Вы уверены, что хотите удалить данный контакт? Да/Нет: ' + Style.RESET_ALL)
+        confirm = input(Fore.RED + 'Вы уверены, что хотите удалить данный контакт? Да/Нет: ' + Style.RESET_ALL)
         if confirm.capitalize() == 'Да':  # Ввод подтверждения
             for item in full_data:
                 if sorted_data[0]["id"] == item["id"]:
                     logger.delete_contact(item)
                     # Если Да, то удаляем контакт из базы
                     full_data.remove(item)
-            print(Back.RED + 'Контакт удален' + Style.RESET_ALL)
+            print(Fore.RED + 'Контакт удален' + Style.RESET_ALL)
             return full_data
         else:
             print(Back.YELLOW + 'Возврат в главное меню' + Style.RESET_ALL)

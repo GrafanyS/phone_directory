@@ -16,7 +16,7 @@ def gen_person():
         'surname': surname,
         'name': name,
         'tel': tel,
-        'comment': description
+        'description': description
     }
     return person
 

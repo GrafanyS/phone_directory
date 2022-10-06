@@ -39,7 +39,7 @@ def change_contacts(data):
 
             if num == 5:
                 phone_dir.pop(i)
-                data[4]['comment'] = input('Введите новую фамилию: ')
+                data[4]['description'] = input('Введите новую фамилию: ')
                 phone_dir.append(data[4])
 
     with open(jsonFilename, 'w', encoding='utf-8') as file:

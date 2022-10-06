@@ -50,7 +50,7 @@ def export_json():
 
             else:
                 temp_dict = {
-                    'id': row[0], 'surname': row[1], 'name': row[2], 'tel': row[3], 'comment': row[4]}
+                    'id': row[0], 'surname': row[1], 'name': row[2], 'tel': row[3], 'description': row[4]}
                 result.append(temp_dict)
 
             count += 1
