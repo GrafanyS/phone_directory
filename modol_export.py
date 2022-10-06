@@ -8,7 +8,7 @@ import logger
 
 def export():
     try:
-        num = int(input('Введите формат для экспорта (1 - .csv или 2 - .txt): '))
+        num = int(input('Введите формат для экспорта (1 - .csv 2 - .json 3 - .txt): '))
         if num == 1:
             export_csv()
         elif num == 2:
@@ -34,7 +34,7 @@ def export_csv():
             count += 1
             file_writer.writerow(row.values())
     logger.export_csv()
-    print(Fore.BLACK + Back.GREEN + f"Экспорт завершен успешно. "
+    print(Fore.GREEN + f"Экспорт завершен успешно. "
                                          f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
 
 
@@ -57,7 +57,7 @@ def export_json():
     with open(jsonFile, 'w', encoding='utf-8') as file:
         json.dump(result, file, indent=2, ensure_ascii=False)
     logger.export_json()
-    print(Fore.BLACK + "" + Back.GREEN + f'Импорт завершен успешно. '
+    print(Fore.GREEN + f'Импорт завершен успешно. '
           f'Всего импортировано {count - 1} контактов.' + Style.RESET_ALL)
 
 
@@ -75,9 +75,10 @@ def export_txt():
     with open(textFile, mode="w", encoding='utf-8') as file:
         file.write(str_data)
     logger.export_txt()
-    print(Fore.BLACK + Back.GREEN + f"Экспорт завершен успешно. "
+    print(Fore.GREEN + f"Экспорт завершен успешно. "
           f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
 
 
 # export_csv()
 # logger.export_json()
+# export_txt()

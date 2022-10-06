@@ -12,8 +12,7 @@ def check_search_menu():
     while True:
         try:
             num = int(
-                input(Fore.BLACK + Back.GREEN + 'Введите номер пункта, по которому вы хотите найти контакт: '
-                      + Style.RESET_ALL))
+                input(Fore.BLUE + 'Введите номер пункта возможности: '+ Style.RESET_ALL))
             if 0 <= num <= 9:
                 break
             else:                

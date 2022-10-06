@@ -7,60 +7,72 @@ import logger
 import delete
 import modol_export
 import modol_import
-import contact
+import modify
+from db_link import *
 from colorama import Fore, Back, Style
 
 
 def main_func():
+    menu.main_menu()
     while True:
-        menu.main_menu()
+        #Выбор пункта меню
         punct_menu = check.check_search_menu()
-
-        if punct_menu == 1:
-            dict_ph = ui.get_value()
+        #Показать список пунктов меню
+        if punct_menu == 0:
+            menu.main_menu()
+        #Добавление нового контакта
+        elif punct_menu == 1:
+            dict_ph = ui.gen_person()
             create.write_json(dict_ph)
-            logger.create_contact(dict_ph)
-
+        #Поиск контакта
         elif punct_menu == 2:
-            if check.check_directory():
-                menu.menu_for_search()
-                punct_menu_search = check.check_search_menu()
-                result_search = search.search_write_json(punct_menu_search)
-                if len(result_search) != 0:
-                    ui.show_contact(result_search)
-                else:
-                    print(
-                        Fore.RED + 'Контакт с такими параметрами отсутствует.' + Style.RESET_ALL)
-                if len(result_search) == 1:
-                    punct_menu_act_contact = menu.action_with_contact()
-                    if punct_menu_act_contact == 4:
-                        exit()
-                    elif punct_menu_act_contact == 3:
-                        continue
-                    elif punct_menu_act_contact == 2:
-                        delete.delete_contact(result_search)
-                        logger.delete_contact(result_search[0])
-                    elif punct_menu_act_contact == 1:
-                        contact.change_contact(result_search)
-                        logger.change_con(result_search[0])
-
-            else:
-                continue
-
+            if check.check_directory():  # Проверка не пустой ли справочник
+                # Считавание всей базы из файла 'phone_directory.json'
+                all_contacts = search.read_json(jsonFilename)
+                found_contacts = search.search_contact(
+                    all_contacts)  # Поиск контакта по критерям
+                if found_contacts != []:  # Проверка найден ли хотя бы один контакт
+                    #Выбор пункта - что дальше делаем с контактом
+                    futher_action = input(
+                        'Что вы хотите сделать с найденным контактом:'+Fore.RED+'1 - удалить, ' 
+                        + Fore.GREEN+'2 - изменить, '+Fore.YELLOW + '3 - ничего: ')
+                    if futher_action == '1':
+                        data = delete.delete_contact(
+                            found_contacts, all_contacts)  # Удаление контакта
+                        modify.write_json_full(data)
+                    elif futher_action == '2':
+                        data = modify.modify_contact(
+                            found_contacts, all_contacts)  # Изменение контакта
+                        modify.write_json_full(data)
+                    else:
+                        menu.main_menu()  # Выход в главное меню
+        #Вывод всех контактов
         elif punct_menu == 3:
             if check.check_directory():
-                ui.show_all_contact()
-
+                ui.show_all_contacts(search.read_json(jsonFilename))
+        #Изменение контакта
         elif punct_menu == 4:
-            modol_export.export_csv()
-            logger.export_csv()
-
+            if check.check_directory():
+                all_contacts = search.read_json(jsonFilename)
+                found_contacts = search.search_contact(all_contacts)
+                data = modify.modify_contact(found_contacts, all_contacts)
+                modify.write_json_full(data)
+        #Удаление контакта
         elif punct_menu == 5:
-            modol_import.import_csv()
-            logger.import_csv()
-
+            if check.check_directory():
+                all_contacts = search.read_json(jsonFilename)
+                found_contacts = search.search_contact(all_contacts)
+                data = delete.delete_contact(found_contacts, all_contacts)
+                modify.write_json_full(data)
+        #Экспорт
+        elif punct_menu == 6:
+            if check.check_directory():
+                modol_export.export()
+        elif punct_menu == 7:
+            modol_import.import_file()
+        #Завершение работы
         else:
-            print("Спасибо за использования справочника. Ждем Вас снова")
+            print(Fore.YELLOW+'Работа со справочников закончена'+Style.RESET_ALL)
             break
 
 

@@ -1,4 +1,5 @@
 import logger
+from colorama import Fore, Back, Style
 
 def delete_contact(sorted_data, full_data):
     
@@ -12,39 +13,35 @@ def delete_contact(sorted_data, full_data):
             input(f'Введите id контакта из данного списка {temp}: '))
         if index_for_delete in temp:
             # Подтверждение, что пользователь действительно хочет удалить данный контакт
-            confirm = input(
-                'Вы уверены, что хотите удалить данный контакт? Да/Нет: ')
+            confirm = input(Back.RED + 'Вы уверены, что хотите удалить данный контакт? Да/Нет: ' + Style.RESET_ALL)
             if confirm.capitalize() == 'Да':  # Ввод подтверждения
                 for item in full_data:
                     if index_for_delete == item["id"]:
                         logger.delete_contact(item)
                         # Если Да, то удаляем контакт из базы
                         full_data.remove(item)
-                print('Контакт удален')
+                print(Back.RED + 'Контакт удален' + Style.RESET_ALL)
                 return full_data
             else:  # Иначе, возвращаемся в главное меню
-                print('Возврат в главное меню')
+                print(Fore.BLUE + 'Возврат в главное меню' + Style.RESET_ALL)
                 return False
         else:
-            print("Вы ввели неверный номер")
+            print(Fore.RED + "Вы ввели неверный номер" + Style.RESET_ALL)
             return False
     elif len(sorted_data) == 1:
         # Подтверждение, что пользователь действительно хочет удалить данный контакт
-        confirm = input(
-            'Вы уверены, что хотите удалить данный контакт? Да/Нет: ')
+        confirm = input(Back.RED + 'Вы уверены, что хотите удалить данный контакт? Да/Нет: ' + Style.RESET_ALL)
         if confirm.capitalize() == 'Да':  # Ввод подтверждения
             for item in full_data:
                 if sorted_data[0]["id"] == item["id"]:
                     logger.delete_contact(item)
                     # Если Да, то удаляем контакт из базы
                     full_data.remove(item)
-            print('Контакт удален')
+            print(Back.RED + 'Контакт удален' + Style.RESET_ALL)
             return full_data
         else:
-            print('Возврат в главное меню')
+            print(Back.YELLOW + 'Возврат в главное меню' + Style.RESET_ALL)
             return False
     else:
-        print('Возврат в главное меню')
+        print(Back.YELLOW + 'Возврат в главное меню' + Style.RESET_ALL)
         return False
-
-  
