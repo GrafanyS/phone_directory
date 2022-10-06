@@ -15,15 +15,17 @@ def read_json(file):
 def search_contact(data):
     try:
         name = input(Fore.BLUE +
-            'Введите имя контакта, номер телефона или комментарий: ' + Style.RESET_ALL)
+                     'Введите имя контакта, номер телефона или комментарий: ' + Style.RESET_ALL)
         found_contacts = []
-        temp = {1: "surname", 2: "name", 3: "tel", 4: "description"}
+        temp = {1: "surname", 2: "name", 3: "tel", 4: "comment"}
         for index, contact in enumerate(data):
-            if name.lower() in contact["surname"].lower() or name.lower() in contact["name"].lower() or name.lower() in contact["tel"].lower() or name.lower() in contact["description"].lower():
+            if name.lower() in contact["surname"].lower() or name.lower() in contact["name"].lower()\
+                    or name.lower() in contact["tel"].lower() or name.lower() in contact["comment"].lower():
                 found_contacts.append(contact)
                 # Выводим заданный контакт
                 print(
-                    f'Найден контакт: {contact["id"]} {contact["surname"]} {contact["name"]} {contact["tel"]} {contact["description"]}')
+                    f'Найден контакт: {contact["id"]} {contact["surname"]} {contact["name"]} {contact["tel"]} '
+                    f'{contact["comment"]}')
         if found_contacts != []:
             return found_contacts
         else:
@@ -36,5 +38,3 @@ def search_contact(data):
 if __name__ == 'main':
     read_json()
     search_contact()
-
-

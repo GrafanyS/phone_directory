@@ -35,7 +35,7 @@ def export_csv():
             file_writer.writerow(row.values())
     logger.export_csv()
     print(Fore.GREEN + f"Экспорт завершен успешно. "
-                                         f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
+                       f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
 
 
 def export_json():
@@ -58,8 +58,7 @@ def export_json():
         json.dump(result, file, indent=2, ensure_ascii=False)
     logger.export_json()
     print(Fore.GREEN + f'Импорт завершен успешно. '
-          f'Всего импортировано {count - 1} контактов.' + Style.RESET_ALL)
-
+                       f'Всего импортировано {count - 1} контактов.' + Style.RESET_ALL)
 
 
 def export_txt():
@@ -76,8 +75,7 @@ def export_txt():
         file.write(str_data)
     logger.export_txt()
     print(Fore.GREEN + f"Экспорт завершен успешно. "
-          f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
-
+                       f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
 
 # export_csv()
 # logger.export_json()

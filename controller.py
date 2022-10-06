@@ -34,16 +34,16 @@ def main_func():
                 if found_contacts != []:  # Проверка найден ли хотя бы один контакт
                     #Выбор пункта - что дальше делаем с контактом
                     futher_action = input(
-                        'Что вы хотите сделать с найденным контактом:'+Fore.RED+'1 - удалить, ' 
+                        'Что вы хотите сделать с найденным контактом:'+Fore.RED+'1 - удалить, '
                         + Fore.GREEN+'2 - изменить, '+Fore.YELLOW + '3 - ничего: ')
                     if futher_action == '1':
                         data = delete.delete_contact(
                             found_contacts, all_contacts)  # Удаление контакта
-                        modify.write_json_full(data)
+                        modify.modify_contact(data)
                     elif futher_action == '2':
                         data = modify.modify_contact(
                             found_contacts, all_contacts)  # Изменение контакта
-                        modify.write_json_full(data)
+                        modify.modify_contact(data)
                     else:
                         menu.main_menu()  # Выход в главное меню
         #Вывод всех контактов

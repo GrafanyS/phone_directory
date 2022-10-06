@@ -1,9 +1,9 @@
 import logger
 from colorama import Fore, Back, Style
 
+
 def delete_contact(sorted_data, full_data):
-    
-    """Функция находит и удаляет заданную запись c контактом"""
+    """Функция находит и удаляет заданную запись с контактом"""
     temp = []
     if len(sorted_data) > 1:
         for item in sorted_data:

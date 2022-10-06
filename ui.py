@@ -13,7 +13,7 @@ def gen_person():
         'surname': surname,
         'name': name,
         'tel': tel,
-        'description': description
+        'comment': description
     }
     return person
 
@@ -21,4 +21,4 @@ def gen_person():
 def show_all_contacts(data):
     for item in data:
         print(
-            f'{item["id"]} {item["surname"]} {item["name"]} {item["tel"]} {item["description"]}')
+            f'{item["id"]} {item["surname"]} {item["name"]} {item["tel"]} {item["comment"]}')

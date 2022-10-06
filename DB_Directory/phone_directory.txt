@@ -1,20 +1,17 @@
-id: 0
-surname: Шагал
-name: Денис
-tel: 3465635
-comment: 
+surname: 0
+name: Шагал
+tel: Денис
+comment: 3465635
 
-id: 1
-surname: Иванов
-name: Петр
-tel: 3465674684
-comment: друг
+surname: 1
+name: Иванов
+tel: Петр
+comment: 3465674684
 
-id: 2
-surname: Петров
-name: Максим
-tel: 987876675
-comment: знакомый
+surname: 2
+name: Петров
+tel: Максим
+comment: 987876675
 
 id: 3
 surname: Иванов
@@ -68,29 +65,29 @@ id: 11
 surname: Пыжиков
 name: Вадим
 tel: 5555555
-description: чижик пыжик
+comment: чижик пыжик
 
 id: 12
 surname: Валетов
 name: Андрей
 tel: +375297002255
-description: прикольный чужщй номер
+comment: прикольный чужщй номер
 
 id: 13
 surname: царь
 name: воан
 tel: 456798
-description: прикол
+comment: прикол
 
 id: 14
 surname: Путин
 name: Владимир
 tel: 777777777
-description: президент
+comment: президент
 
 id: 15
 surname: Конандойл
 name: Артур
 tel: 5689
-description: писатель
+comment: писатель
 

@@ -3,11 +3,12 @@ from concurrent.futures.thread import _worker
 from datetime import datetime as dt
 from db_link import *
 import logging
+
 # import time
 
 
-
 logger = logging.getLogger(__name__)
+
 
 def create_contact(data):
     time = dt.now().strftime('%d-%b-%y %H:%M:%S')
@@ -56,14 +57,14 @@ def import_json():
     with open(LOG, 'a', encoding='utf-8') as file:
         file.write(
             f'{time}; Import all contact from .json\n')
-        
+
 
 def import_csv():
     time = dt.now().strftime('%d-%b-%y %H:%M:%S')
     with open(LOG, 'a', encoding='utf-8') as file:
         file.write(
             f'{time}; Import all contact from .csv;\n')
-        
+
 
 def change_con(data):
     time = dt.now().strftime('%d-%b-%y %H:%M:%S')
@@ -80,8 +81,6 @@ def main_logger():
         level=logging.DEBUG,
     )
     logger.error("Произошло что-то важное")
-
-
 
 # start = time.perf_counter()
 # change_con(LOG)

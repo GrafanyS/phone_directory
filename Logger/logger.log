@@ -42,3 +42,18 @@ ERROR:root:РџСЂРѕРёР·РѕС€Р»Рѕ С‡С‚Рѕ-С‚Рѕ РІР°Р¶РЅРѕРµ
 2022-10-06 18:11:33,334 - logger - ERROR - РџСЂРѕРёР·РѕС€Р»Рѕ С‡С‚Рѕ-С‚Рѕ РІР°Р¶РЅРѕРµ
 2022-10-06 18:11:33,334 - logger - ERROR - РџСЂРѕРёР·РѕС€Р»Рѕ С‡С‚Рѕ-С‚Рѕ РІР°Р¶РЅРѕРµ
 06-Oct-22 19:57:45 : {'id': 16, 'surname': 'РџРµС‚СЂРѕРІ', 'name': 'РїРµС‚СЂ', 'tel': '516564', 'description': 'РїСЂРёРІРµС‚'}; Create new contact;
+2022-10-06 20:32:37,703 - logger - ERROR - Произошло что-то важное
+2022-10-06 20:32:37,703 - logger - ERROR - Произошло что-то важное
+06-Oct-22 20:32:54; Import all contact from .txt
+06-Oct-22 20:33:04; Export all contact in .txt
+06-Oct-22 20:39:00 : {'id': 16, 'surname': 'РџРµС‚СЂРѕРІ', 'name': 'РїРµС‚СЂ', 'tel': '516564', 'description': 'РїСЂРёРІРµС‚'}; Delete contact;
+06-Oct-22 20:43:49 : {'id': 16, 'surname': 'РџРµС‚СЂРѕРІ', 'name': 'РїРµС‚СЂ', 'tel': '516564', 'description': 'РїСЂРёРІРµС‚'}; Delete contact;
+06-Oct-22 21:03:11; Import all contact from .csv;
+06-Oct-22 21:36:58; Import all contact from .txt
+06-Oct-22 21:37:50; Export all contact in .csv;
+06-Oct-22 21:38:00; Export all contact in .json;
+06-Oct-22 21:41:35; Export all contact in .json;
+2022-10-06 21:42:08,494 - logger - ERROR - Произошло что-то важное
+2022-10-06 21:42:08,495 - logger - ERROR - Произошло что-то важное
+2022-10-06 22:03:47,314 - logger - ERROR - Произошло что-то важное
+2022-10-06 22:03:47,326 - logger - ERROR - Произошло что-то важное
