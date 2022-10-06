@@ -25,7 +25,7 @@ def export_csv():
     with open(jsonFilename, 'r', encoding='utf-8') as f:
         phone_dir = json.load(f)
     count = 0
-    with open(csvFile, mode="w", encoding='utf-8') as w_file:
+    with open(csvFilename, mode="w", encoding='utf-8') as w_file:
         file_writer = csv.writer(w_file, delimiter=",", lineterminator="\r")
         for row in phone_dir:
             if count == 0:

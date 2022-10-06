@@ -7,7 +7,6 @@ def main():
     controller.main_func()
     main_logger()
 
-
 if __name__ == '__main__':
     main()
     main_logger()

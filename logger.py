@@ -21,7 +21,7 @@ def delete_contact(data):
     with open(LOG, 'a', encoding='utf-8') as file:
         file.write(
             f'{time} : {data}; Delete contact;\n')
-        
+
 
 def export_csv():
     time = dt.now().strftime('%d-%b-%y %H:%M:%S')
@@ -88,4 +88,4 @@ def main_logger():
 # import_csv(LOG)
 # finish = time.perf_counter()
 # print(f"Преобразование строк успешно завершено в {finish - start:0.4f} секунд")
-
+# info_logger()
