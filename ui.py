@@ -12,11 +12,11 @@ def get_value():
 
 
 def show_contact(list_res):
-    '''
+    """
     Выводит в консоль найденные контакты
     :param list_res:
     :return:
-    '''
+    """
     print('Найдены следующие контакты: ')
     for num, i in enumerate(list_res):
         print(
@@ -29,11 +29,11 @@ def show_contact(list_res):
 
 
 def show_all_contact():
-    '''
+    """
     Выводит в консоль все контакты контакты
     :param list_res:
     :return:
-    '''
+    """
 
     with open(db_link.jsonFilename, 'r', encoding='utf-8') as f:
         phone_dir = json.load(f)
@@ -45,4 +45,4 @@ def show_all_contact():
             f'Фамилия: {i["surname"]}\n'
             f'Имя: {i["name"]}\n'
             f'Телефон: {i["tel"]}\n'
-            f'Статус: {i["comment"]}\n' + Style.RESET_ALL)
+            f'Статус: {i["comment"]}' + Style.RESET_ALL)

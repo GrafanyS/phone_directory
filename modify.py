@@ -1,42 +1,57 @@
 import json
+import  csv
+from db_link import *
 
-def modify_contact(sorted_data, full_data):
-    
-    """Функция находит и изменяет заданную запись c контактом"""
-    temp = []  
-    if len(sorted_data)>0:
-        for i in sorted_data:
-            temp.append(i["id"])
-        index_for_change = int(input(f'Введите id контакта для удаления из данного списка {temp}: '))     #Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
-        if index_for_change in temp:
-            confirm = input('Вы уверены, что хотите изменить данный контакт? Да/Нет: ')  # Подтверждение, что пользователь действительно хочет удалить данный контакт
-            if confirm.capitalize() == 'Да':    #Ввод подтверждения
-                field_to_change = input('Что вы хотите изменить: 1 - Фамилию, 2 - Имя, 3 - номер, 4 - комментарий: ')
-                if field_to_change == '1':
-                    surname = input("Введите новую фамилию: ")
-                    full_data[index_for_change]["surname"] = surname
-                    return full_data
-                if field_to_change == '2':
-                    name = input("Введите новое имя: ")
-                    full_data[index_for_change]["name"] = name
-                    return full_data
-                if field_to_change == '3':
-                    tel = input("Введите новый номер: ")
-                    full_data[index_for_change]["tel"] = tel
-                    return full_data
-                if field_to_change == '4':
-                    description = input("Введите новый комментарий: ")
-                    full_data[index_for_change]["description"] = description
-                    return full_data
-            else:    #Иначе, возвращаемся в главное меню
-                return 'Возврат в главное меню'
-        else: 
-            return "Вы ввели неверный номер"
-    else:
-        return 'Возврат в главное меню'  
 
-  
-# sorted_data = [
+# def modify_contact(sorted_data, full_data):
+#     """Функция находит и изменяет заданную запись с контактом"""
+#     temp = []
+#     if len(sorted_data) > 0:
+#         for i in sorted_data:
+#             temp.append(i["id"])
+#         index_for_change = int(input(
+#             f'Введите id контакта для удаления из данного списка {temp}: '))  # Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
+#         if index_for_change in temp:
+#             confirm = input(
+#                 'Вы уверены, что хотите изменить данный контакт? Да/Нет: ')  # Подтверждение, что пользователь действительно хочет удалить данный контакт
+#             if confirm.capitalize() == 'Да':  # Ввод подтверждения
+#                 field_to_change = input('Что вы хотите изменить: 1 - Фамилию, 2 - Имя, 3 - номер, 4 - комментарий: ')
+#                 if field_to_change == '1':
+#                     surname = input("Введите новую фамилию: ")
+#                     full_data[index_for_change]["surname"] = surname
+#                     return full_data
+#                 if field_to_change == '2':
+#                     name = input("Введите новое имя: ")
+#                     full_data[index_for_change]["name"] = name
+#                     return full_data
+#                 if field_to_change == '3':
+#                     tel = input("Введите новый номер: ")
+#                     full_data[index_for_change]["tel"] = tel
+#                     return full_data
+#                 if field_to_change == '4':
+#                     description = input("Введите новый комментарий: ")
+#                     full_data[index_for_change]["description"] = description
+#                     return full_data
+#             else:  # Иначе, возвращаемся в главное меню
+#                 return 'Возврат в главное меню'
+#         else:
+#             return "Вы ввели неверный номер"
+#     else:
+#         return 'Возврат в главное меню'
+def export():
+    with open(jsonFilename, 'r') as f:
+        phone_dir = json.load(f)
+    count = 0
+    with open(csvFile, mode="w", encoding='utf-8') as w_file:
+        file_writer = csv.writer(w_file, delimiter=",", lineterminator="\r")
+        file_writer.writerow(["Фамилия\t", "Имя\t", "Телефон\t", "Описание\t"])
+        for i in phone_dir:
+            file_writer.writerow([i['surname'],i['name'], i['tel'], i['comment']])
+            count+=1
+    print(f'\033[30m\033[42m\033[4m Экспорт завершен успешно. '
+          f'Всего экспортировано {count} контактов. \033[0m')
+
+    # sorted_data = [
 #     {
 #         "id": 0,
 #         "surname": "Шагал",

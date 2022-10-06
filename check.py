@@ -10,7 +10,7 @@ def check_search_menu():
             num = int(
                 input(Fore.BLACK + "" + Back.GREEN + 'Введите номер пункта, по которому вы хотите найти контакт: '
                       + Style.RESET_ALL))
-            if 0 <= num <= 1:
+            if 0 <= num <= 6:
                 break
             else:
                 # print(Fore.BLACK + "" + Back.BLUE + 'Такого пункта меню нет!' + Style.RESET_ALL)

@@ -4,6 +4,7 @@ import json
 import check
 from db_link import *
 
+
 def change_contacts(data):
     with open(jsonFilename, 'r', encoding='utf-8') as f:
         phone_dir = json.load(f)
@@ -11,11 +12,11 @@ def change_contacts(data):
     for i in range(len(phone_dir)):
         if phone_dir[i] == data[0]:
             print(Fore.BLACK + "" + Back.BLUE + 'Что вы хотите изменить:' + Style.RESET_ALL + '\n'
-                  '1. id: \n'
-                  '1. Фамилию: \n'
-                  '2. Имя: \n'
-                  '3. Номер телефона: \n'
-                  '4. Описание: ')
+                                                                                              '1. id: \n'
+                                                                                              '1. Фамилию: \n'
+                                                                                              '2. Имя: \n'
+                                                                                              '3. Номер телефона: \n'
+                                                                                              '4. Описание: ')
             num = check.check_menu_ch_con()
             if num == 1:
                 phone_dir.pop(i)
@@ -44,5 +45,3 @@ def change_contacts(data):
     with open(jsonFilename, 'w', encoding='utf-8') as file:
         json.dump(phone_dir, file, indent=2, ensure_ascii=False)
     print(Fore.BLACK + "" + Back.GREEN + f'Ваш контакт успешно изменен. Переводим вас в начало меню' + Style.RESET_ALL)
-
-
