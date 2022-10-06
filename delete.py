@@ -1,122 +1,50 @@
-import json
+import logger
 
 def delete_contact(sorted_data, full_data):
     
     """Функция находит и удаляет заданную запись c контактом"""
-    temp = []  
-    if len(sorted_data)>0:
-        for i in sorted_data:
-            temp.append(i["id"])
-        index_for_delete = int(input(f'Введите id контакта для удаления из данного списка {temp}: '))     #Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
+    temp = []
+    if len(sorted_data) > 1:
+        for item in sorted_data:
+            temp.append(item["id"])
+        # Здесь нужно добавить проверку, что пользователь ввел только индекс из списка
+        index_for_delete = int(
+            input(f'Введите id контакта из данного списка {temp}: '))
         if index_for_delete in temp:
-            confirm = input('Вы уверены, что хотите удалить данный контакт? Да/Нет: ')  # Подтверждение, что пользователь действительно хочет удалить данный контакт
-            if confirm.capitalize() == 'Да':    #Ввод подтверждения
-                del full_data[index_for_delete]    #Если Да, то удаляем контакт из базы
+            # Подтверждение, что пользователь действительно хочет удалить данный контакт
+            confirm = input(
+                'Вы уверены, что хотите удалить данный контакт? Да/Нет: ')
+            if confirm.capitalize() == 'Да':  # Ввод подтверждения
+                for item in full_data:
+                    if index_for_delete == item["id"]:
+                        logger.delete_contact(item)
+                        # Если Да, то удаляем контакт из базы
+                        full_data.remove(item)
+                print('Контакт удален')
                 return full_data
-            else:    #Иначе, возвращаемся в главное меню
-                return 'Возврат в главное меню'
-        else: 
-            return "Вы ввели неверный номер"
+            else:  # Иначе, возвращаемся в главное меню
+                print('Возврат в главное меню')
+                return False
+        else:
+            print("Вы ввели неверный номер")
+            return False
+    elif len(sorted_data) == 1:
+        # Подтверждение, что пользователь действительно хочет удалить данный контакт
+        confirm = input(
+            'Вы уверены, что хотите удалить данный контакт? Да/Нет: ')
+        if confirm.capitalize() == 'Да':  # Ввод подтверждения
+            for item in full_data:
+                if sorted_data[0]["id"] == item["id"]:
+                    logger.delete_contact(item)
+                    # Если Да, то удаляем контакт из базы
+                    full_data.remove(item)
+            print('Контакт удален')
+            return full_data
+        else:
+            print('Возврат в главное меню')
+            return False
     else:
-        return 'Возврат в главное меню'  
+        print('Возврат в главное меню')
+        return False
 
   
-# sorted_data = [
-#     {
-#         "id": 0,
-#         "surname": "Шагал",
-#         "name": "Денис",
-#         "tel": "3465635",
-#         "description": ""
-#     },
-#     {
-#         "id": 2,
-#         "surname": "Петров",
-#         "name": "Максим",
-#         "tel": "987876675",
-#         "description": "знакомый"
-#     },
-#     {
-#         "id": 6,
-#         "surname": "Ренжин",
-#         "name": "Василий",
-#         "tel": "3465667",
-#         "description": "выапвп"
-#     }
-# ]
-
-# full_data = [
-#     {
-#         "id": 0,
-#         "surname": "Шагал",
-#         "name": "Денис",
-#         "tel": "3465635",
-#         "description": ""
-#     },
-#     {
-#         "id": 1,
-#         "surname": "Иванов",
-#         "name": "Петр",
-#         "tel": "3465674684",
-#         "description": "друг"
-#     },
-#     {
-#         "id": 2,
-#         "surname": "Петров",
-#         "name": "Максим",
-#         "tel": "987876675",
-#         "description": "знакомый"
-#     },
-#     {
-#         "id": 3,
-#         "surname": "Иванов",
-#         "name": "Сергей",
-#         "tel": "546357367",
-#         "description": "кто-то"
-#     },
-#     {
-#         "id": 4,
-#         "surname": "Сидоров",
-#         "name": "Иван",
-#         "tel": "54656767",
-#         "description": "однажды встретил на улице"
-#     },
-#     {
-#         "id": 5,
-#         "surname": "Курицын",
-#         "name": "Эдуард",
-#         "tel": "465356357",
-#         "description": "куевкп"
-#     },
-#     {
-#         "id": 6,
-#         "surname": "Ренжин",
-#         "name": "Василий",
-#         "tel": "3465667",
-#         "description": "выапвп"
-#     },
-#     {
-#         "id": 7,
-#         "surname": "Кочегар",
-#         "name": "Михаил",
-#         "tel": "5476758",
-#         "description": "ывнен"
-#     },
-#     {
-#         "id": 8,
-#         "surname": "Бумагин",
-#         "name": "Василий",
-#         "tel": "346547",
-#         "description": "фуепкеген"
-#     },
-#     {
-#         "id": 9,
-#         "surname": "Белов",
-#         "name": "Анатолий",
-#         "tel": "34657",
-#         "description": "вафыпао"
-#     }
-# ]
-
-
-# print(delete_contact(sorted_data, full_data))

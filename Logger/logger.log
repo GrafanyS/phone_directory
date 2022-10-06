@@ -14,3 +14,4 @@
 05-Oct-22 16:42:40 : {'surname': 'Сидоров', 'name': 'Сидор', 'tel': '7777777', 'comment': 'сидор'}; Create new contact;
 05-Oct-22 16:45:52 : {'id': '10', 'surname': 'Cbljhjd', 'name': 'Сидор', 'tel': '777755', 'comment': 'чвавы'}; Create new contact;
 05-Oct-22 17:29:15 : {'id': '11', 'surname': 'Пыжиков', 'name': 'Вадим', 'tel': '5555555', 'description': 'чижик пыжик'}; Create new contact;
+06-Oct-22 10:25:32; Export all contact in .json;
