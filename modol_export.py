@@ -5,6 +5,19 @@ from colorama import Fore, Back, Style
 from db_link import *
 
 
+def export():
+    try:
+        num = int(input('Введите формат для экспорта (1 - .csv или 2 - .txt): '))
+        if num == 1:
+            export_csv()
+        elif num == 2:
+            export_json()
+        else:
+            print('Вы ввели неверный номер')
+    except:
+        print('Вы ввели не число')
+
+
 def export_csv():
     with open(jsonFile, 'r', encoding='utf-8') as f:
         phone_dir = json.load(f)
@@ -20,5 +33,8 @@ def export_csv():
     print(Fore.BLACK + Back.GREEN + f"Экспорт завершен успешно. "
                                          f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
 
+
+def export_json():
+    ...
 
 # export_csv()
