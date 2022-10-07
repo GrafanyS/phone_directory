@@ -1,8 +1,8 @@
 # импорт необходимых библиотек
 import json
+from logger import *
 from colorama import Fore, Back, Style
 from db_link import *
-import logger
 
 
 def gen_person():
@@ -25,7 +25,8 @@ def write_json(person_dict):
     try:
         with open(dbFilename, 'r', encoding='utf-8') as file:
             data = json.load(file)
-    except:
+    except ValueError:
+        ValueError_logger()
         data = []
     last_id = int(data[len(data) - 1]["id"])
     person_dict["id"] = last_id + 1

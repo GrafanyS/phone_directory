@@ -77,5 +77,6 @@ def check_menu_ch_con():
 
         return
 
+
 if __name__ == '__main__':
     check_menu_act_contact()

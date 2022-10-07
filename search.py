@@ -1,4 +1,5 @@
 import json
+from logger import *
 from colorama import Fore, Back, Style
 from db_link import *
 
@@ -8,8 +9,9 @@ def read_json(file):
         with open(dbFilename, 'r', encoding='utf-8') as file:
             data = json.load(file)
             return data
-    except:
+    except ValueError:
         print(Back.RED + 'В базе еще нет ни одного контакта :(' + Style.RESET_ALL)
+        ValueError_logger()
 
 
 def search_contact(data):
@@ -31,8 +33,9 @@ def search_contact(data):
         else:
             print(Fore.RED + 'Такого контакта нет в базе.' + Style.RESET_ALL)
             return found_contacts
-    except:
+    except ValueError:
         print(Fore.RED + 'В базе такого контакта нет' + Style.RESET_ALL)
+        ValueError_logger()
 
 
 if __name__ == '__main__':

@@ -77,5 +77,7 @@ def main_func():
             Finished_logger()
             print(Fore.YELLOW + 'Работа со справочников закончена' + Style.RESET_ALL)
             break
+
+
 if __name__ == '__main__':
     main_func()
