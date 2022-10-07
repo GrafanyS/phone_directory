@@ -60,3 +60,20 @@ ERROR:root:Произошло что-то важное
 07-Oct-22 01:24:43 : {'id': 16, 'surname': 'Петров', 'name': 'Петр', 'tel': '516564', 'description': 'привет'}; Contact change;new contact;
 07-Oct-22 01:28:05 : {'id': 16, 'surname': 'Петров', 'name': 'Петр', 'tel': '516564', 'description': 'привет мой'}; Contact change;new contact;
 07-Oct-22 01:29:25 : {'id': 17, 'surname': 'Корлев', 'name': 'Кирил', 'tel': '+654', 'description': 'нет'}; Delete contact;
+07-Oct-22 12:42:46 INFO: Started
+07-Oct-22 12:43:03 INFO: Finished
+07-Oct-22 12:51:53 INFO: Started
+07-Oct-22 12:54:15 INFO: Finished
+07-Oct-22 12:54:25 INFO: Started
+07-Oct-22 12:55:14 WARNING: ValueError
+07-Oct-22 12:57:22 INFO: Finished
+07-Oct-22 13:00:15 INFO: Started
+07-Oct-22 13:00:23; Import all contact from .json
+07-Oct-22 13:00:31; Import all contact from .csv;
+07-Oct-22 13:05:00 INFO: Finished
+07-Oct-22 13:05:04 INFO: Started
+07-Oct-22 13:05:10; Import all contact from .csv;
+07-Oct-22 13:05:16; Import all contact from .json
+07-Oct-22 13:07:24; Export all contact in .json;
+07-Oct-22 13:07:48; Export all contact in .csv;
+07-Oct-22 13:16:45 INFO: Finished

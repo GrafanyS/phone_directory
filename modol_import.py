@@ -5,6 +5,7 @@ from colorama import Fore, Back, Style
 import logger
 
 
+
 def import_file():
     try:
         num = int(input('Введите формат для импорта (1 - .csv 2 - .json 3 - .txt): '))
@@ -35,7 +36,7 @@ def import_csv():
     logger.import_csv()
 
     print(Fore.GREEN + f'Импорт завершен успешно. '
-          f'Всего импортировано {count - 1} контактов.' + Style.RESET_ALL)
+          f'Всего импортировано {count-1} контактов.' + Style.RESET_ALL)
 
 
 def import_json():
@@ -56,9 +57,11 @@ def import_json():
             count += 1
     with open(jsonFile, 'w', encoding='utf-8') as file:
         json.dump(result, file, indent=2, ensure_ascii=False)
+    logger.import_json()
 
     print(Fore.GREEN + f'Импорт завершен успешно. '
-          f'Всего импортировано {count - 1} контактов.' + Style.RESET_ALL)
+          f'Всего импортировано {count} контактов.' + Style.RESET_ALL)
+    
 
 
 def import_txt():

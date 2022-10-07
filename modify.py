@@ -119,7 +119,7 @@ def write_json_full(data):
     if data == False:
         return 'Возврат в главное меню'
     else:
-        with open('phone_directory.json', 'w', encoding='utf-8') as file:
+        with open(dbFilename, 'w', encoding='utf-8') as file:
             json.dump(data, file, indent=4, ensure_ascii=False)
             print('База данных успешно обновлена')
 

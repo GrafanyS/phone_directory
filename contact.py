@@ -42,6 +42,6 @@ def change_contacts(data):
                 data[4]['description'] = input('Введите новую фамилию: ')
                 phone_dir.append(data[4])
 
-    with open(jsonFilename, 'w', encoding='utf-8') as file:
+    with open(dbFilename, 'w', encoding='utf-8') as file:
         json.dump(phone_dir, file, indent=2, ensure_ascii=False)
     print(Fore.BLACK + "" + Back.GREEN + f'Ваш контакт успешно изменен. Переводим вас в начало меню' + Style.RESET_ALL)

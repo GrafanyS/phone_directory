@@ -25,7 +25,7 @@ def export_csv():
     with open(jsonFilename, 'r', encoding='utf-8') as f:
         phone_dir = json.load(f)
     count = 0
-    with open(csvFilename, mode="w", encoding='utf-8') as w_file:
+    with open(csvFile, mode="w", encoding='utf-8') as w_file:
         file_writer = csv.writer(w_file, delimiter=",", lineterminator="\r")
         for row in phone_dir:
             if count == 0:
@@ -35,7 +35,7 @@ def export_csv():
             file_writer.writerow(row.values())
     logger.export_csv()
     print(Fore.GREEN + f"Экспорт завершен успешно. "
-                       f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
+                       f'Всего экспортировано {count-1} контактов.' + Style.RESET_ALL)
 
 
 def export_json():
@@ -75,7 +75,7 @@ def export_txt():
         file.write(str_data)
     logger.export_txt()
     print(Fore.GREEN + f"Экспорт завершен успешно. "
-                       f'Всего экспортировано {count} контактов.' + Style.RESET_ALL)
+                       f'Всего экспортировано {count-1} контактов.' + Style.RESET_ALL)
 
 # export_csv()
 # logger.export_json()

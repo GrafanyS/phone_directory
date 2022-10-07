@@ -1,8 +1,10 @@
 # импорт необходимых библиотек
 from concurrent.futures.thread import _worker
 from datetime import datetime as dt
-from db_link import *
 import logging
+from db_link import *
+from loguru import logger
+
 
 # import time
 
@@ -73,14 +75,35 @@ def change_con(data):
             f'{time} : {data}; Contact change;new contact;\n')
 
 
-def main_logger():
+def ValueError_logger():
     logging.basicConfig(
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        filename=LOG,
-        filemode='a',
-        level=logging.DEBUG,
-    )
-    logger.error("Произошло что-то важное")
+        filename=LOG, format='%(asctime)s %(levelname)s: %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.DEBUG)
+    logging.warning('ValueError')
+
+
+def Started_logger():
+    logging.basicConfig(
+        filename=LOG, format='%(asctime)s %(levelname)s: %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.DEBUG)
+    logging.info('Started')
+    
+
+def Finished_logger():
+    logging.basicConfig(
+        filename=LOG, format='%(asctime)s %(levelname)s: %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.DEBUG)
+    logging.info('Finished')
+    # logger=logging.getLogger()
+    # logger.debug('Starting logger')
+    # logger.add(LOG, format="format="{time:'%d-%b-%y %H:%M:%S'} | {level} | {message}", level="DEBUG", rotation="10KB", compression="zip")
+    
+    # logger.debug("Starting")
+    # for _ in range(10):
+    #     logger.debug("Произошло что-то (DEBUG)")
+    #     logger.error("Произошло что-то (ERROR)")
+    #     logger.info("Произошло что-то (INFO)")
+
+# @logger.catch
+# def logger_main():
+#     ...   
 
 # start = time.perf_counter()
 # change_con(LOG)

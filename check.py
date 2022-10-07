@@ -2,6 +2,7 @@
 import json
 from colorama import Fore, Back, Style
 from db_link import *
+from logger import *
 
 
 def check_search_menu():
@@ -18,6 +19,7 @@ def check_search_menu():
                 print(Fore.RED + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
                 continue
         except ValueError:
+            ValueError_logger()
             print(Fore.BLACK + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
 
     return num
@@ -29,11 +31,12 @@ def check_directory():
     :return:
     """
     try:
-        with open(jsonFilename, 'r', encoding='utf-8') as f:
+        with open(dbFilename, 'r', encoding='utf-8') as f:
             phone_dir = json.load(f)
             if phone_dir != []:
                 return True
     except ValueError:
+        ValueError_logger()
         print(Fore.BLACK + Back.RED + 'Ваш справочник пока еще пустой!' + Style.RESET_ALL)
         return False
 
@@ -52,6 +55,7 @@ def check_menu_act_contact():
                 print(Fore.BLACK + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
                 continue
         except ValueError:
+            ValueError_logger()
             print(Fore.BLACK + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
 
     return num
@@ -69,6 +73,7 @@ def check_menu_ch_con():
                 print(Fore.BLACK + Back.GREEN + 'Такого пункта меню нет! Попробуйте снова.' + Style.RESET_ALL)
                 continue
         except ValueError:
+            ValueError_logger()
             print(Fore.BLACK + Back.RED + 'Вы ввели некорректное число! Попробуйте снова.' + Style.RESET_ALL)
 
         return

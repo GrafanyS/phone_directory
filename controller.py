@@ -8,11 +8,13 @@ import delete
 import modol_export
 import modol_import
 import modify
+from logger import *
 from db_link import *
 from colorama import Fore, Back, Style
 
 
 def main_func():
+    Started_logger()
     menu.main_menu()
     while True:
         # Выбор пункта меню
@@ -72,6 +74,7 @@ def main_func():
             modol_import.import_file()
         # Завершение работы
         else:
+            Finished_logger()
             print(Fore.YELLOW + 'Работа со справочников закончена' + Style.RESET_ALL)
             break
 

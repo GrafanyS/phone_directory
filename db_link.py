@@ -9,6 +9,7 @@ if platform == "linux" or platform == "linux2":
     csvFile = r'DB_export/phone_directory_export.csv'
     jsonFile = r'DB_export/phone_directory_export.json'
     textFile = r'DB_export/phone_directory_export.txt'
+    dbFilename = r'DB_export/db_directory.json'
     LOG = r'Logger/logger.log'
 elif platform == "darwin":
     csvFilename = r'DB_Directory/phone_directory.csv'
@@ -17,6 +18,7 @@ elif platform == "darwin":
     csvFile = r'DB_export/phone_directory_export.csv'
     jsonFile = r'DB_export/phone_directory_export.json'
     textFile = r'DB_export/phone_directory_export.txt'
+    dbFilename = r'DB_export/db_directory.json'
     LOG = r'Logger/logger.log'
 elif platform == "win32":
     csvFilename = r'DB_Directory\phone_directory.csv'
@@ -25,4 +27,5 @@ elif platform == "win32":
     csvFile = r'DB_export\phone_directory_export.csv'
     jsonFile = r'DB_export\phone_directory_export.json'
     textFile = r'DB_export\phone_directory_export.txt'
+    dbFilename = r'DB_export\db_directory.json'
     LOG = r'Logger\logger.log'
