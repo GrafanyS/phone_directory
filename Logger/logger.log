@@ -87,3 +87,26 @@ ERROR:root:Произошло что-то важное
 07-Oct-22 18:19:04 INFO: Finished
 07-Oct-22 18:19:09 INFO: Started
 07-Oct-22 18:20:00 INFO: Finished
+07-Oct-22 18:28:28 INFO: Started
+07-Oct-22 18:33:37 INFO: Finished
+07-Oct-22 18:48:54 INFO: Started
+07-Oct-22 18:53:21 INFO: Finished
+07-Oct-22 18:53:27 INFO: Started
+07-Oct-22 18:53:39 INFO: Finished
+07-Oct-22 18:54:18 INFO: Started
+07-Oct-22 18:54:37 INFO: Finished
+07-Oct-22 18:57:49 INFO: Started
+07-Oct-22 18:58:10 INFO: Finished
+07-Oct-22 19:01:13 INFO: Started
+07-Oct-22 19:03:19 INFO: Finished
+07-Oct-22 19:13:10 INFO: Started
+07-Oct-22 19:14:08 : {'id': 16, 'surname': 'Петров', 'name': 'Петр', 'tel': '516564', 'description': 'превосходно'}; Contact change;new contact;
+07-Oct-22 19:14:15 INFO: Finished
+07-Oct-22 19:26:49 INFO: Started
+07-Oct-22 19:28:46 INFO: Started
+07-Oct-22 19:29:09 WARNING: ValueError
+07-Oct-22 19:29:53 INFO: Started
+07-Oct-22 19:32:34 INFO: Started
+07-Oct-22 19:33:09 WARNING: ValueError
+07-Oct-22 19:33:09 : {'id': 22, 'surname': 'Дубровский', 'name': 'Сергей', 'tel': '564654', 'description': 'поселок'}; Create new contact;
+07-Oct-22 19:33:23 INFO: Finished
