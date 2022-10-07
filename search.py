@@ -5,7 +5,7 @@ from db_link import *
 
 def read_json(file):
     try:
-        with open(jsonFilename, 'r', encoding='utf-8') as file:
+        with open(dbFilename, 'r', encoding='utf-8') as file:
             data = json.load(file)
             return data
     except:
