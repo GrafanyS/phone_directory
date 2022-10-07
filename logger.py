@@ -3,7 +3,7 @@ from concurrent.futures.thread import _worker
 from datetime import datetime as dt
 import logging
 from db_link import *
-from loguru import logger
+# from loguru import logger
 
 
 # import time
