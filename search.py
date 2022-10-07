@@ -19,7 +19,7 @@ def search_contact(data):
         found_contacts = []
         temp = {1: "surname", 2: "name", 3: "tel", 4: "description"}
         for index, contact in enumerate(data):
-            if name.lower() in contact["surname"].lower() or name.lower() in contact["name"].lower()\
+            if name.lower() in contact["surname"].lower() or name.lower() in contact["name"].lower() \
                     or name.lower() in contact["tel"].lower() or name.lower() in contact["description"].lower():
                 found_contacts.append(contact)
                 # Выводим заданный контакт
@@ -35,6 +35,5 @@ def search_contact(data):
         print(Fore.RED + 'В базе такого контакта нет' + Style.RESET_ALL)
 
 
-# if __name__ == 'main':
-#     read_json()
-#     search_contact()
+if __name__ == '__main__':
+    search_contact()

@@ -1,3 +1,4 @@
+# импорт необходимых библиотек
 import logger
 from colorama import Fore, Back, Style
 

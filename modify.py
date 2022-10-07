@@ -123,3 +123,9 @@ def write_json_full(data):
             json.dump(data, file, indent=4, ensure_ascii=False)
             print('База данных успешно обновлена')
 
+
+if __name__ == '__main__':
+    modify_contact()
+    take_id_from_dictionary()
+    search_of_index_to_modify()
+    write_json_full()

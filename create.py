@@ -1,7 +1,7 @@
+# импорт необходимых библиотек
 import json
 from colorama import Fore, Back, Style
 from db_link import *
-import db_link
 import logger
 
 

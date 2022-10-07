@@ -1,4 +1,4 @@
-from distutils.text_file import TextFile
+# импорт необходимых библиотек
 from sys import platform
 
 

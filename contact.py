@@ -45,3 +45,7 @@ def change_contacts(data):
     with open(dbFilename, 'w', encoding='utf-8') as file:
         json.dump(phone_dir, file, indent=2, ensure_ascii=False)
     print(Fore.BLACK + "" + Back.GREEN + f'Ваш контакт успешно изменен. Переводим вас в начало меню' + Style.RESET_ALL)
+
+
+if __name__ == '__main__':
+    change_contacts()
